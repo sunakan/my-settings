@@ -1,7 +1,9 @@
 [tools]
 go = ['1.23.3']
 ruby = ['3.3.6']
-awscli = 'latest'
+python = ['3.12.7']
+# awscli: 別のCPU typeがインストールされるので、brewで管理
+#awscli = ['2.21.2', '2.21.3']
 aws-vault = 'latest'
 tmux = 'latest'
 jq = 'latest'

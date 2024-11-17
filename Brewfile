@@ -71,3 +71,14 @@ brew "mise"
 #
 brew "libyaml"
 
+#
+# awscli
+#
+# URL
+# - https://formulae.brew.sh/formula/awscli
+#
+# 概要
+# - mise/asdfでインストールした時
+#   - zsh: bad CPU type in executable: aws
+#   - みたいなエラーが出るため、brewで入れる
+brew "awscli"
