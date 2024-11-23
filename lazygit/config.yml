@@ -1,0 +1,6 @@
+customCommands:
+  - key: "C"
+    context: "files"
+    command: "git commit -v"
+    description: "Vimでコミットメッセージを編集"
+    subprocess: true
