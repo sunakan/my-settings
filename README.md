@@ -17,3 +17,14 @@ mise plugins ls-remote | less
 - JetBrains Toolbox
 - Raycast
 - DeepL
+
+## AstroNvim
+
+https://github.com/AstroNvim/AstroNvim?tab=readme-ov-file
+
+```
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.cache/nvim
+```
