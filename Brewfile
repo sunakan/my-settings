@@ -93,3 +93,13 @@ brew "awscli"
 # - docker desktopの代替
 #     - https://orbstack.dev/
 cask "orbstack"
+
+#
+# mysql-client
+#
+# URL
+# - https://formulae.brew.sh/formula/mysql-client@8.4
+#
+# 概要
+# - MySQLのクライアント
+brew "mysql-client@8.4"
