@@ -9,4 +9,7 @@ mkdir -p ~/.config/wezterm/
 mkdir -p ~/.config/lazygit/
 [ ! -f ~/.config/lazygit/config.yml ] && ln -s $(pwd)/.config/lazygit/config.yml ~/.config/lazygit/config.yml
 
+mkdir -p ~/.config/git/
+[ ! -f ~/.config/git/ignore ] && ln -s $(pwd)/.config/git/ignore ~/.config/git/ignore
+
 ls -lh ~/.config/**
