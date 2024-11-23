@@ -82,3 +82,14 @@ brew "libyaml"
 #   - zsh: bad CPU type in executable: aws
 #   - みたいなエラーが出るため、brewで入れる
 brew "awscli"
+
+#
+# orbstack
+#
+# URL
+# - https://formulae.brew.sh/cask/orbstack
+#
+# 概要
+# - docker desktopの代替
+#     - https://orbstack.dev/
+cask "orbstack"
