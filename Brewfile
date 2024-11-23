@@ -121,6 +121,18 @@ cask "orbstack"
 brew "mysql-client@8.4"
 
 #
+# zstd
+#
+# URL
+# - https://formulae.brew.sh/formula/zstd
+#
+# 概要
+# - Zstandard(zstd)
+# - 可逆圧縮アルゴリズム
+# - mysql-client@8.4を利用して、mysql2 gemをビルドするのに必要
+brew "zstd"
+
+#
 # gdu
 #
 # URL
