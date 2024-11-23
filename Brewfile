@@ -103,3 +103,16 @@ cask "orbstack"
 # 概要
 # - MySQLのクライアント
 brew "mysql-client@8.4"
+
+#
+# gdu
+#
+# URL
+# - https://formulae.brew.sh/formula/gdu
+#
+# 概要
+# - go DiskUsage()
+#   - Goで記述された高速なディスク使用量分析ツール
+# - https://github.com/dundee/gdu
+# - AstroNvimのために導入
+brew "gdu"
