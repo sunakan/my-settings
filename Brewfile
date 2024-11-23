@@ -84,6 +84,18 @@ brew "libyaml"
 brew "awscli"
 
 #
+# docker desktop
+#
+# URL
+# - https://formulae.brew.sh/cask/docker
+#
+# 概要
+# - docker
+# docker context use desktop-linux
+# docker buildx ls --no-trunc
+cask "docker"
+
+#
 # orbstack
 #
 # URL
@@ -92,6 +104,10 @@ brew "awscli"
 # 概要
 # - docker desktopの代替
 #     - https://orbstack.dev/
+# docker context use orbstack
+# docker buildx ls --no-trunc
+# - https://github.com/orbstack/orbstack/issues/1457
+# にて、linux/amd64/v2をサポートできてないらしい → MySQLなどがうまく動かない
 cask "orbstack"
 
 #
