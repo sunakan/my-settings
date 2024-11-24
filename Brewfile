@@ -144,3 +144,26 @@ brew "zstd"
 # - https://github.com/dundee/gdu
 # - AstroNvimのために導入
 brew "gdu"
+
+#
+# zsh-completions
+#
+# URL
+# - https://formulae.brew.sh/formula/zsh-completions
+#
+# 概要
+# - zshで補完を効かせるツール
+# ```.zshrc
+# autoload -Uz compinit
+# compinit
+# ```
+#
+# Homebrewによってインストールされたzshの共有ディレクトリに対して、グループとその他ユーザーの書き込み権限を再帰的に削除
+# -R: 再帰的に
+# g: グループ
+# o: その他ユーザー
+# -w: 書き込み権限の削除
+# ```shell
+# chmod -R go-w $(brew --prefix)/share/zsh/
+# ````
+brew "zsh-completions"
