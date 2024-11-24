@@ -167,3 +167,15 @@ brew "gdu"
 # chmod -R go-w $(brew --prefix)/share/zsh/
 # ````
 brew "zsh-completions"
+
+#
+# percona-toolkit
+#
+# URL
+# - https://formulae.brew.sh/formula/percona-toolkit
+#
+# 概要
+# - MySQLの色々なツールが含まれている
+# - slowqueryの分析ツールであるpt-query-digestが入っている
+# - isuconで利用
+brew "percona-toolkit"
