@@ -179,3 +179,16 @@ brew "zsh-completions"
 # - slowqueryの分析ツールであるpt-query-digestが入っている
 # - isuconで利用
 brew "percona-toolkit"
+
+#
+# duckdb
+#
+# URL
+# - https://formulae.brew.sh/formula/duckdb
+#
+# 概要
+# - SQLite3の列指向版
+# - 分析特化
+# - ファイルベースで管理可能なdb
+# - ファイルサイズも小さい
+brew "duckdb"
