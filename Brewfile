@@ -192,3 +192,20 @@ brew "percona-toolkit"
 # - ファイルベースで管理可能なdb
 # - ファイルサイズも小さい
 brew "duckdb"
+
+#
+# cirruslabs/cli/tart
+#
+# URL
+# - https://github.com/cirruslabs/tart?tab=readme-ov-file#usage
+#
+# 概要
+# - Mac(Arm)特化型の仮想マシンを構築できるツール
+# - VirtualBoxがMac(Arm)に対応したけど、まだVagrant Box側にboxがない
+# - vagrant pluginとしてvagrant-tartを作ってくれ、軽いドキュメントまであるので、Tartを利用する
+#   - 作ったよというメッセージ(まだ公式には承認はされていないっぽい)
+#     - https://github.com/hashicorp/vagrant/issues/12760#issuecomment-2183976588
+#   - ドキュメント
+#     - https://letiemble.github.io/vagrant-tart/
+tap "cirruslabs/cli"
+brew "cirruslabs/cli/tart"
