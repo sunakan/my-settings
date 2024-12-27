@@ -2,7 +2,7 @@
 # mise ls-remote --all
 # mise ls-remote go
 go = ['1.23.3']
-ruby = ['3.3.6']
+ruby = ['3.2.6', '3.3.6']
 nodejs = ['22.11.0']
 java = ['temurin-21.0.5+11.0.LTS']
 python = 'latest'
