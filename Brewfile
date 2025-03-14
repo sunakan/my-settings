@@ -209,3 +209,14 @@ brew "duckdb"
 #     - https://letiemble.github.io/vagrant-tart/
 tap "cirruslabs/cli"
 brew "cirruslabs/cli/tart"
+
+#
+# bottom
+#
+# URL
+# - https://github.com/ClementTsang/bottom
+#
+# 概要
+# - topコマンドの代替
+#
+brew "bottom"
