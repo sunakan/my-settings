@@ -7,7 +7,13 @@ mise ls-remote ruby
 
 ```shell
 # 使えるプラグイン一覧
+mise plugins update
 mise plugins ls-remote | less
+```
+
+```shell
+mise install
+mise prune
 ```
 
 ## Mac
