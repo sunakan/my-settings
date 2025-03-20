@@ -220,3 +220,14 @@ brew "cirruslabs/cli/tart"
 # - topコマンドの代替
 #
 brew "bottom"
+
+#
+#
+#
+# URL
+# - https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md
+#
+# 概要
+# - gitでPATを利用せずにアクセスするためのツール
+#
+cask "git-credential-manager"
