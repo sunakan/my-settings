@@ -1,6 +1,9 @@
 # インストール可能なrubyバージョン一覧
 # mise ls-remote ruby
 #
+# 不要なバージョン等を削除
+# mise prune
+#
 # 利用できるプラグイン一覧
 # mise plugins update
 # mise plugins ls-remote
