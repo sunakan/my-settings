@@ -231,3 +231,14 @@ brew "bottom"
 # - gitでPATを利用せずにアクセスするためのツール
 #
 cask "git-credential-manager"
+
+#
+# pinact
+#
+# URL
+# - https://formulae.brew.sh/formula/pinact
+#
+# 概要
+# - github actionsのバージョンをpin
+#
+brew "pinact"
