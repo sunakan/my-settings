@@ -34,3 +34,9 @@ yq = 'latest'
 gh = 'latest'
 direnv = 'latest'
 poetry = 'latest'
+
+[settings]
+# idiomatic version fileを有効化するかどうか
+# asdfやmiseなどのバージョン管理ツールに依存しない「言語毎に標準的なバージョンファイル」
+# 例: .go-version
+idiomatic_version_file_enable_tools = ["go"]
