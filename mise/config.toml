@@ -13,7 +13,7 @@
 # mise ls-remote go
 go = ['1.24.2']
 ruby = ['3.4.2']
-nodejs = ['22.15.0']
+nodejs = ['24.1.0']
 java = ['temurin-21.0.5+11.0.LTS']
 opentofu = ['1.9.0']
 terraform = ['1.12.1']
