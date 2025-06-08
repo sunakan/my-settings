@@ -34,6 +34,7 @@ yq = 'latest'
 gh = 'latest'
 direnv = 'latest'
 poetry = 'latest'
+typst = 'latest'
 
 [settings]
 # idiomatic version fileを有効化するかどうか
