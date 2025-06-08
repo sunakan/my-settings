@@ -242,3 +242,15 @@ cask "git-credential-manager"
 # - github actionsのバージョンをpin
 #
 brew "pinact"
+
+#
+# gnupg
+#
+# URL
+# - https://formulae.brew.sh/formula/pinact
+#
+# 概要
+# - GPGキーを生成するのに利用
+# - GitHubのコミットの信頼性を高めるためのやつ
+#
+brew "gnupg"
