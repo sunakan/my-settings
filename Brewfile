@@ -254,3 +254,14 @@ brew "pinact"
 # - GitHubのコミットの信頼性を高めるためのやつ
 #
 brew "gnupg"
+
+#
+# pinentry-mac
+#
+# URL
+# - https://formulae.brew.sh/formula/pinentry-mac
+#
+# 概要
+# - GPGキーのパスフレーズを自動入力してくれる
+#
+brew "pinentry-mac"
