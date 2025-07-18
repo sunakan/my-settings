@@ -72,16 +72,20 @@ brew "mise"
 brew "libyaml"
 
 #
-# awscli
+# awscli と session-manager-plugin
 #
 # URL
 # - https://formulae.brew.sh/formula/awscli
+# - https://formulae.brew.sh/cask/session-manager-plugin
 #
 # 概要
 # - mise/asdfでインストールした時
 #   - zsh: bad CPU type in executable: aws
 #   - みたいなエラーが出るため、brewで入れる
+# - ssm でのEC2ログイン機能は、プラグインで分離された模様
+#   - aws cli v2には同梱されているとかあったが、brewで入れるとなかった
 brew "awscli"
+cask "session-manager-plugin"
 
 #
 # docker desktop
