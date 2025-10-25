@@ -11,7 +11,7 @@
 [tools]
 # mise ls-remote --all
 # mise ls-remote go
-go = ['1.24.2']
+go = ['1.25.3']
 ruby = ['3.4.2']
 nodejs = ['24.1.0']
 java = ['temurin-21.0.5+11.0.LTS']
