@@ -269,3 +269,33 @@ brew "gnupg"
 # - GPGキーのパスフレーズを自動入力してくれる
 #
 brew "pinentry-mac"
+
+#
+# fzf
+#
+# URL
+# - https://formulae.brew.sh/formula/fzf
+#
+# 概要
+# - CLI用ファジー検索ツール
+#
+brew "fzf"
+
+#
+# fd
+#
+# URL
+# - https://formulae.brew.sh/formula/fd
+#
+# 概要
+# - シンプルで高速かつユーザーフレンドリーなfind file代替手段
+#
+brew "fd"
+
+#
+# graphviz
+#
+# 概要
+# - pprofのWebUIで必要
+#
+brew "graphviz"
