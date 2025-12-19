@@ -97,7 +97,7 @@ cask "session-manager-plugin"
 # - docker
 # docker context use desktop-linux
 # docker buildx ls --no-trunc
-cask "docker"
+#cask "docker-desktop"
 
 #
 # orbstack
