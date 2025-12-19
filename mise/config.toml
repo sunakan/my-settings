@@ -18,6 +18,7 @@ java = ['temurin-21.0.5+11.0.LTS']
 opentofu = ['1.9.0']
 terraform = "1.14.1"
 python = ['3.12']
+zig = ['0.15.2']
 bun = 'latest'
 # awscli: 別のCPU typeがインストールされるので、brewで管理
 # awscli = ['2.21.2', '2.21.3']
