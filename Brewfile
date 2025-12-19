@@ -299,3 +299,11 @@ brew "fd"
 # - pprofのWebUIで必要
 #
 brew "graphviz"
+
+#
+# Pandoc
+#
+# 概要
+# - HTML → Markdown変換
+#
+brew "pandoc"
