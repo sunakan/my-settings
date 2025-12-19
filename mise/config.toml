@@ -39,6 +39,8 @@ gh = 'latest'
 direnv = 'latest'
 poetry = 'latest'
 typst = 'latest'
+grpcurl = 'latest'
+protoc = 'latest'
 
 [settings]
 # idiomatic version fileを有効化するかどうか
