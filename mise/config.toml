@@ -41,6 +41,8 @@ poetry = 'latest'
 typst = 'latest'
 grpcurl = 'latest'
 protoc = 'latest'
+eksctl = '0.220.0'
+kubectl = '1.34.3'
 
 [settings]
 # idiomatic version fileを有効化するかどうか
