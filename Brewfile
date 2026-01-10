@@ -314,3 +314,10 @@ brew "pandoc"
 # 概要
 # - ファイル検証に利用
 brew "minisign"
+
+#
+# otel-cli
+#
+# 概要
+# - SDK不要で、trace/metric/logを直接OTLP送信可能
+brew "otel-cli"
