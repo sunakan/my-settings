@@ -307,3 +307,10 @@ brew "graphviz"
 # - HTML → Markdown変換
 #
 brew "pandoc"
+
+#
+# minisig
+#
+# 概要
+# - ファイル検証に利用
+brew "minisign"
