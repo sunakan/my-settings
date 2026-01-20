@@ -25,6 +25,8 @@ deno = 'latest'
 # awscli: 別のCPU typeがインストールされるので、brewで管理
 # awscli = ['2.21.2', '2.21.3']
 # mise outdated で確認
+#
+# mise upで、最新のやつインストールしなおし
 aws-vault = 'latest'
 tmux = '3.5a'
 jq = 'latest'
