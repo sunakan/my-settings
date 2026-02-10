@@ -11,9 +11,6 @@
 [tools]
 # mise ls-remote --all
 # mise ls-remote go
-zig = ['0.15.2']
-bun = 'latest'
-deno = 'latest'
 go = ['1.26.0']
 ruby = ['4.0.1']
 nodejs = ['24.13.1']
@@ -39,7 +36,6 @@ eza = 'latest'
 yq = 'latest'
 gh = 'latest'
 direnv = 'latest'
-poetry = 'latest'
 typst = 'latest'
 grpcurl = 'latest'
 protoc = 'latest'
