@@ -342,3 +342,10 @@ cask "claude-code"
 # 概要
 # - 標準入力でファイル一覧を受け付け、変更があったらコマンドを実行
 brew "entr"
+
+#
+# skim
+#
+# 概要
+# - PDF Viewer
+cask "skim"
