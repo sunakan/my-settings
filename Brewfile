@@ -335,3 +335,10 @@ brew "eza"
 # 概要
 # - Claude Code
 cask "claude-code"
+
+#
+# entr
+#
+# 概要
+# - 標準入力でファイル一覧を受け付け、変更があったらコマンドを実行
+brew "entr"
