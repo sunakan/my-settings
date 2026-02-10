@@ -328,3 +328,10 @@ brew "otel-cli"
 # 概要
 # - lsの代替
 brew "eza"
+
+#
+# Calude Code
+#
+# 概要
+# - Claude Code
+cask "claude-code"
