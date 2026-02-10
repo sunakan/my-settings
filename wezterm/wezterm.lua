@@ -10,6 +10,9 @@ config.font_size = 18.0
 config.adjust_window_size_when_changing_font_size = false
 
 -- デフォルトで入っているカラースキーマ
-config.color_scheme = 'Solarized Darcula'
+-- config.color_scheme = 'Solarized Darcula'
+-- config.color_scheme = "Github (Gogh)"
+-- config.color_scheme = "Github Dark (Gogh)"
+config.color_scheme = "Gogh (Gogh)"
 
 return config
