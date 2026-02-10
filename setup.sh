@@ -12,4 +12,7 @@ mkdir -p ~/.config/lazygit/
 mkdir -p ~/.config/git/
 [ ! -f ~/.config/git/ignore ] && ln -s $(pwd)/git/ignore ~/.config/git/ignore
 
+mkdir -p ~/.config/tmux/
+[ ! -f ~/.config/tmux/tmux.conf ] && ln -s $(pwd)/tmux/tmux.conf ~/.config/tmux/tmux.conf
+
 ls -lh ~/.config/**
