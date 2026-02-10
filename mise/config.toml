@@ -48,3 +48,10 @@ kubectl = '1.34.3'
 # asdfやmiseなどのバージョン管理ツールに依存しない「言語毎に標準的なバージョンファイル」
 # 例: .go-version
 idiomatic_version_file_enable_tools = ["go"]
+
+[env]
+# geminiを起動すると、以下のような警告が出るため抑制する
+# (node:89335) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+# (Use `node --trace-deprecation ...` to show where the warning was created)
+# (node:89348) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+NODE_OPTIONS = "--disable-warning=DEP0040"
