@@ -11,7 +11,6 @@
 [tools]
 # mise ls-remote --all
 # mise ls-remote go
-java = ['temurin-21.0.5+11.0.LTS']
 opentofu = ['1.9.0']
 terraform = "1.14.1"
 python = ['3.12']
@@ -21,6 +20,7 @@ deno = 'latest'
 go = ['1.26.0']
 ruby = ['4.0.1']
 nodejs = ['24.13.1']
+java = ['temurin-25.0.2+10.0.LTS']
 
 # awscli: 別のCPU typeがインストールされるので、brewで管理
 # awscli = ['2.21.2', '2.21.3']
