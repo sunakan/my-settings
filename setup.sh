@@ -15,4 +15,6 @@ mkdir -p ~/.config/git/
 mkdir -p ~/.config/tmux/
 [ ! -f ~/.config/tmux/tmux.conf ] && ln -s $(pwd)/tmux/tmux.conf ~/.config/tmux/tmux.conf
 
+[ -f ~/.config/nvim/lua/config/options.lua ] && ln -s $(pwd)/nvim/lua/config/options.lua ~/.config/nvim/lua/config/options.lua
+
 ls -lh ~/.config/**
