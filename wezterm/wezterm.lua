@@ -1,9 +1,9 @@
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 local config = {}
 
 -- フォント
-config.font = wezterm.font('HackGen Console NF')
+config.font = wezterm.font("HackGen Console NF")
 config.font_size = 18.0
 
 -- フォントサイズ変更時にウィンドウサイズを変更しない
