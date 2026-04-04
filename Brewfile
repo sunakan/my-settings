@@ -349,3 +349,28 @@ brew "entr"
 # 概要
 # - PDF Viewer
 cask "skim"
+
+#
+# pngquant
+#
+# 概要
+# - 画像圧縮
+# - 圧縮率: 40〜80% 削減
+# - 劣化: palette変換（256色）なので視覚的にはほぼ気づかない
+# - --quality=80-95 で品質調整可能
+# 使い方1: pngquant --quality=80-95 --output output.png input.png
+# 使い方2: pngquant --quality=80-95 --ext .png --force *.png
+brew "pngquant"
+
+#
+# oxipng
+#
+# 概要
+# - 可逆圧縮
+# - -o 3 が速度/圧縮のバランスが良い（0〜6）
+# - oxipng -o 3 --recursive ./images/
+# - 圧縮率: 10〜30% 削減（可逆なので限界はある）
+# #組み合わせ
+# # まず pngquant で非可逆圧縮 → oxipng でさらに可逆最適化
+# pngquant --quality=80-95 --ext .png --force *.png && oxipng -o 3 *.png
+brew "oxipng"
