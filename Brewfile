@@ -363,3 +363,13 @@ brew "pngquant"
 # # まず pngquant で非可逆圧縮 → oxipng でさらに可逆最適化
 # pngquant --quality=80-95 --ext .png --force *.png && oxipng -o 3 *.png
 brew "oxipng"
+
+#
+# op
+#
+# 概要
+# - 1PasswordのCLI
+#
+# 使い方例(.envrc)
+# export HOGE=$(op read "op://Personal/アイテム名/password")
+cask "1password-cli"
