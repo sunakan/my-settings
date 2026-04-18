@@ -226,17 +226,6 @@ brew "cirruslabs/cli/tart"
 brew "bottom"
 
 #
-# git-credential-manager
-#
-# URL
-# - https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md
-#
-# 概要
-# - gitでPATを利用せずにアクセスするためのツール
-#
-cask "git-credential-manager"
-
-#
 # pinact
 #
 # URL
