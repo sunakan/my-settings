@@ -2,15 +2,6 @@
 
 ## 検討中
 
-### スキル: `review-git-diff-size`
-
-> REVIEW: `claudecode/skills/review-git-diff-size/REVIEW.md`
-
-⚠️ 改善提案 1件（❌ 問題点なし）:
-- **「適切な粒度」の判定基準の言語化**: 「1コミット分として適切な粒度か評価する」の基準が暗黙。「変更行数 / 変更ファイル数 / 関心事の数」などの観点をヒント程度に添えると評価のブレが減る。
-
----
-
 ### スキル: `review-skills`
 
 > REVIEW: `claudecode/skills/review-skills/REVIEW.md`
