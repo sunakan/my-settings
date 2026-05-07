@@ -1,7 +1,7 @@
 # REVIEW: update-claude-settings
 
 > レビュー日時: 2026-05-07
-> ファイル: /Users/user01/works/github.com/sunakan/my-settings/claudecode/skills/update-claude-settings/SKILL.md
+> ファイル: claudecode/skills/update-claude-settings/SKILL.md
 
 ## 総評
 Claude Code の設定改善候補を Web 検索で調査し、TODO.md に追記するスキルで、責務が明確。`context: fork` が設定されており、4つのエージェントを並列起動するパターンも正しく実装されている。全体的に高品質なスキルで、軽微な改善余地のみ存在する。
@@ -18,7 +18,7 @@ Claude Code の設定改善候補を Web 検索で調査し、TODO.md に追記�
 
 ## ⚠️ 改善提案（任意対応）
 - **`when_to_use` 欠如**: description に使用タイミングが含まれているが、`when_to_use` フィールドとして分離するとより明確になる → 追加例: `when_to_use: "Claude Code の設定を見直したいとき、新しいベストプラクティスを調査したいとき、my-settings リポジトリで設定改善候補をリストアップしたいとき"`
-- **`Edit` ツールの必要性確認**: `allowed-tools` に `Edit` が含まれているが、スキルの本文では TODO.md への追記に `Edit` を使うことが明示されていない（Write で追記する可能性もある）。実際の使用ツールに合わせて整理すると良い
+- **`Edit` ツールの必要性確認**: `allowed-tools` に `Edit` が含まれているが、スキルの本文では TODO.md への追記に `Edit` を使うことが明示されていない（Write で全書き換えする可能性もある）。実際の使用ツールに合わせて整理すると良い
 
 ## ❌ 問題点（要修正）
 

@@ -1,7 +1,7 @@
 # REVIEW: commit
 
 > レビュー日時: 2026-05-07
-> ファイル: /Users/user01/works/github.com/sunakan/my-settings/claudecode/skills/commit/SKILL.md
+> ファイル: claudecode/skills/commit/SKILL.md
 
 ## 総評
 git コミットメッセージを3候補提示してからコミットする、責務が明確なスキル。`disable-model-invocation: true` と `allowed-tools` の絞り込みが適切で、副作用操作のセキュリティ面は良好。`context: fork` と `when_to_use` の欠如が改善余地として残る。

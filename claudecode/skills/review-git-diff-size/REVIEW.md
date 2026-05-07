@@ -1,7 +1,7 @@
 # REVIEW: review-git-diff-size
 
 > レビュー日時: 2026-05-07
-> ファイル: /Users/user01/works/github.com/sunakan/my-settings/claudecode/skills/review-git-diff-size/SKILL.md
+> ファイル: claudecode/skills/review-git-diff-size/SKILL.md
 
 ## 総評
 ステージング済み差分の粒度を評価するシンプルなスキルで、15行と非常にコンパクト。読み取り専用の評価スキルとして必要十分な内容を持つ。`disable-model-invocation` と `when_to_use` が欠如しているが、副作用のない評価スキルとして実害は小さい。
@@ -15,7 +15,7 @@
 
 ## ⚠️ 改善提案（任意対応）
 - **`when_to_use` 欠如**: description に使用タイミングが含まれているが、`when_to_use` フィールドを追加するとより明確になる → 追加例: `when_to_use: "コミット前に差分が1コミット分として適切か確認したいとき、差分が大きすぎて分割すべきか迷っているとき"`
-- **`context: fork` 検討**: 評価のみの読み取りスキルなので `context: fork` + `agent: Explore` を付けるとメインコンテキストを汚染しない。ただし評価結果をユーザーに見せるのが主目的のため、意図的に省いている可能性もある
+- **`context: fork` + `agent: Explore` 検討**: 読み取り専用の評価スキルなので、`context: fork` と `agent: Explore` を付けるとメインコンテキストを汚染しない。ただし評価結果をユーザーに見せるのが主目的のため省略も合理的
 
 ## ❌ 問題点（要修正）
 
