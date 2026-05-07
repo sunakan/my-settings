@@ -1,11 +1,11 @@
 ---
 name: review-claude-skills
 description: 既存の SKILL.md（`.claude/skills/<name>/SKILL.md`）を 8 観点（one skill one job・description は load-bearing・冒頭に最重要事項・500 行以下・CLAUDE.md との重複・無駄な Bash inline・disable-model-invocation の妥当性・三人称表記）で機械的にレビューし、改善提案を出す。引数でスキル名を指定すれば単体、省略時は全スキルを対象。新規 SKILL.md 作成や既存スキルの改善時に使う
+when_to_use: "新規 SKILL.md を作成したとき、既存スキルを改善したとき、スキルの品質を確認したいとき"
 disable-model-invocation: true
 allowed-tools: Read Write Edit Bash(ls *) WebSearch WebFetch
 argument-hint: "[skill-name]"
 context: fork
-when_to_use: "新規 SKILL.md を作成したとき、既存スキルを改善したとき、スキルの品質を確認したいとき"
 ---
 
 ## 目的

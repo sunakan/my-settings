@@ -1,11 +1,11 @@
 ---
 name: review-claude-rules
 description: `.claude/rules/*.md` を 6 観点（paths フロントマター存在・paths パターンの妥当性・行数・CLAUDE.md との重複・自明な内容の排除・path-scoped に値する内容か）でレビューし、改善提案を出す。引数でファイル名を指定すれば単体、省略時は全 rules を対象。rules ファイルの新規作成や編集後に使う
+when_to_use: ".claude/rules/*.md を新規作成・編集したとき、rules ファイルの品質を一括確認したいとき"
 disable-model-invocation: true
 allowed-tools: Read Write Edit Bash(find *) Bash(ls *) Bash(date *)
 argument-hint: "[rule-filename]"
 context: fork
-when_to_use: ".claude/rules/*.md を新規作成・編集したとき、rules ファイルの品質を一括確認したいとき"
 ---
 
 ## 目的

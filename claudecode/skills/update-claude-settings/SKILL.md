@@ -1,10 +1,10 @@
 ---
 name: update-claude-settings
 description: /update-claude-settings で呼ばれた時、Web検索でClaude Codeの最新ベストプラクティス・新オプション・コミュニティの工夫を調査し、現在の設定と照らし合わせて改善候補をTODO.mdの「検討中」セクションに追記する
+when_to_use: "Claude Code の設定を見直したいとき、新しいベストプラクティスを調査したいとき、my-settings リポジトリで設定改善候補をリストアップしたいとき"
 disable-model-invocation: true
 allowed-tools: WebSearch WebFetch Read Bash(ls ~/.claude/*) Edit Agent
 context: fork
-when_to_use: "Claude Code の設定を見直したいとき、新しいベストプラクティスを調査したいとき、my-settings リポジトリで設定改善候補をリストアップしたいとき"
 ---
 
 ## 前提チェック

@@ -2,11 +2,11 @@
 name: review-skills
 description: "Claude Code スキル（SKILL.md）をベストプラクティスに照らしてレビューし、結果を SKILL.md と同じディレクトリの REVIEW.md に書き出す。引数なしで .claude/skills/ 全スキルを並列一括レビュー、引数ありで単体レビュー。frontmatter の過不足・本文の書き方・サブエージェントパターン・安全性を確認する。"
 when_to_use: "スキルを新規作成したあと、既存スキルを改善したいとき、SKILL.md の内容が正しいか確認したいときに使う。引数なしで .claude/skills/ 全体を一括レビューできる。"
-argument-hint: "[skill-name または SKILL.md のパス]（省略時は .claude/skills/ を一括レビュー）"
+disable-model-invocation: true
 allowed-tools: Read Bash(find *) Bash(ls *) Bash(wc *) Write Edit Agent
+argument-hint: "[skill-name または SKILL.md のパス]（省略時は .claude/skills/ を一括レビュー）"
 context: fork
 agent: general-purpose
-disable-model-invocation: true
 ---
 
 ## 制約

@@ -1,9 +1,9 @@
 ---
 name: commit
 description: `/commit` で呼ばれた時にステージング済みの変更を分析し、3 つのコミットメッセージ候補からおすすめを選んでコミットする。ステージング操作（git add / stage）はユーザーが行う前提。コミットメッセージのスタイルは直近の git log から学習する
+when_to_use: "ステージング済みの変更をコミットするとき（git add はユーザーが済ませた前提）"
 disable-model-invocation: true
 allowed-tools: Bash(git diff *) Bash(git log *) Bash(git commit *)
-when_to_use: "ステージング済みの変更をコミットするとき（git add はユーザーが済ませた前提）"
 # context: fork は付けない — 評価結果をユーザーに会話で提示することが主目的のため（ファイル出力がメインになったら検討）
 ---
 

@@ -1,10 +1,10 @@
 ---
 name: next-todo
 description: "TODO.md の「検討中」セクションから次の作業項目を取り出し、現状・課題/背景・対応手段・効果・期待の順で提示してユーザーに確認を求める。TODO.md がなければ「TODOがありません」と返す"
-disable-model-invocation: true
 when_to_use: "次のTODO項目を確認したいとき、TODO項目に着手する前に内容を整理したいとき"
-# context: fork は付けない — Step 5 の「進めますか？」確認がメイン会話で機能する必要があるため（ファイル出力がメインになったら検討）
+disable-model-invocation: true
 allowed-tools: Read Edit Bash(grep *)
+# context: fork は付けない — Step 5 の「進めますか？」確認がメイン会話で機能する必要があるため（ファイル出力がメインになったら検討）
 ---
 
 ## 手順
