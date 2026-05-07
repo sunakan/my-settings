@@ -25,6 +25,7 @@ LINKS=(
   "$(pwd)/global-personal-claudecode/rules:$HOME/.claude/rules"
   "$(pwd)/global-personal-claudecode/settings.json:$HOME/.claude/settings.json"
   "$(pwd)/global-personal-claudecode/skills:$HOME/.claude/skills"
+  "$(pwd)/global-personal-claudecode/CLAUDE.md:$HOME/.claude/CLAUDE.md"
 )
 
 for entry in "${LINKS[@]}"; do
