@@ -1,25 +1,23 @@
 # REVIEW: commit
 
 > レビュー日時: 2026-05-07
-> ファイル: /Users/user01/.claude/skills/commit/SKILL.md
+> ファイル: /Users/user01/works/github.com/sunakan/my-settings/claudecode/skills/commit/SKILL.md
 
 ## 総評
-ステージング済み差分から候補3つを提示しおすすめでコミットする、責務が明確なスキル。`disable-model-invocation: true` と `allowed-tools` の最小権限化が徹底されており、`context: fork` を付けない理由がコメントで明記されている点も良い設計。frontmatter・本文に致命的な問題はなく、軽微な改善余地のみ。
+ステージング済み差分から候補3つを提示してコミットする、責務が明確なスキル。`disable-model-invocation: true` と最小限の `allowed-tools`、`context: fork` を付けない理由のコメントが揃っており、設計の意図が自己説明的で品質が高い。52行とコンパクトで、致命的な問題はなし。
 
 ## ✅ 良い点
-- frontmatter コメント（L7）に `context: fork` を付けない理由が明記されている（候補提示→ユーザー確認→コミット実行という対話フローが主目的）。チェック [1] の `context` 判定は (B)「ユーザーへの会話が主目的」に該当し、現在の設定（`context: fork` なし）が正しい。本文 L26 にも同じ意図が再掲されており一貫している。
-- `allowed-tools: Bash(git diff *) Bash(git log *) Bash(git commit *)`（L6）と必要最小限に絞られており、`Bash` 全体許可になっていない（チェック [4] 過剰許可なし）。
-- `disable-model-invocation: true`（L5）が設定されており、コミットという副作用の大きい操作で自動 invoke を防いでいる（チェック [4] 破壊的操作の安全性）。
-- `git add` / `git stage` を絶対に実行しないという制約（L24）が明確で責務分離が徹底されている。
-- 動的コンテキストを `` !`git diff --staged` ``（L16）と `` !`git log --oneline -10` ``（L20）で取得しており、チェック [2] の動的コンテキスト要件を満たす。
-- ステージングが空のときのフォールバック（L25）が明記されており、チェック [2] フォールバック要件を満たす。
-- `when_to_use`（L4）が独立フィールドとして存在し、呼び出し判断の文脈が明確。
-- 本文 52 行は 500 行制限を大幅に下回り、supporting files への分割は不要。
+- `context: fork` を付けない理由が frontmatter コメント（L7）と本文（L26）の両方に明記されている。チェック [1] の `context` 判定は (B)「ユーザーへの会話が主目的」に該当し、候補提示→確認→コミットという対話フローを維持するために `context: fork` なしが正しい。
+- `allowed-tools: Bash(git diff *) Bash(git log *) Bash(git commit *)`（L6）と必要最小限。`Bash` 全体許可になっていない（チェック [4] 過剰許可なし）。
+- `disable-model-invocation: true`（L5）が設定されており、コミットという副作用の大きい操作で自動invokeを防いでいる（チェック [4] 破壊的操作の安全性）。
+- `git add` / `git stage` を絶対に実行しない制約（L24）で責務が明確に分離されている。
+- `` !`git diff --staged` ``（L16）と `` !`git log --oneline -10` ``（L20）で動的コンテキストを取得（チェック [2] 動的コンテキスト）。
+- ステージングが空のときのフォールバック（L25）が明記されている（チェック [2] フォールバック）。
+- `when_to_use`（L4）が独立フィールドとして存在し呼び出し判断の文脈が明確。
+- 52行で500行制限を大幅に下回り、supporting files への分割は不要。
 
 ## ⚠️ 改善提案（任意対応）
-- **description の trigger 表現**: description（L3）は `/commit` で呼ばれた時という記述から始まるが、`disable-model-invocation: true` を付けているため自動呼び出し判定には使われない。影響は限定的だが、description の冒頭を「いつ呼ぶか」の判断基準として明確化したい場合は、先頭に呼び出し条件を凝縮する形に変えると description の意図がより明確になる。
-  - 現状: `` `/commit` で呼ばれた時にステージング済みの変更を分析し、3 つのコミットメッセージ候補からおすすめを選んでコミットする。…``
-  - 改善案（例）: ``ステージング済みの変更に対してコミットメッセージ候補 3 つを提示しおすすめでコミットする。`/commit` で呼ぶ。…``
+- **description の冒頭の情報密度**: description（L3）は「ステージング済みの変更に対してコミットメッセージ候補 3 つを提示しおすすめでコミットする」という内容から始まっており、現状でも呼び出し判断に十分。ただし `disable-model-invocation: true` の場合は description がコンテキストにロードされないため、description の改善による実質的な効果は限定的（参考情報として）。
 
 ## ❌ 問題点（要修正）
 なし。

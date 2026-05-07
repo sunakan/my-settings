@@ -1,12 +1,13 @@
 ---
 name: review-claude-skills
-description: "既存の SKILL.md（`.claude/skills/<name>/SKILL.md`）を 8 観点で機械的にレビューし改善提案を出す。引数でスキル名を指定すれば単体、省略時は全スキルを対象。新規 SKILL.md 作成や既存スキルの改善時に使う。サブエージェント並列・REVIEW.md 書き出しが必要なら review-skills を使う"
+description: "既存の SKILL.md（`.claude/skills/<name>/SKILL.md`）を 8 観点で機械的にレビューし改善提案を出す。引数でスキル名を指定すれば単体、省略時は全スキルを対象。新規 SKILL.md 作成や既存スキルの改善時に使う。単体スキルの素早い評価はこちら、全スキル一括 REVIEW.md 書き出しが必要なら review-skills を使う"
 when_to_use: "新規 SKILL.md を作成したとき、既存スキルを改善したとき、スキルの品質を確認したいとき"
 disable-model-invocation: true
 allowed-tools: Read Write Edit Bash(ls *) WebSearch WebFetch
 argument-hint: "[skill-name]"
 context: fork
 # agent は省略 — 書き込みありのため general-purpose がデフォルト = 正しい
+# $ARGUMENTS はユーザー自身が入力するため shell injection 対策は省略（自己injection リスクは許容）
 ---
 
 ## 目的

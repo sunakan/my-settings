@@ -27,9 +27,14 @@ context: fork
 ## Step 1: 対象ファイルを特定
 
 ```!
-[ -n "$ARGUMENTS" ] \
-  && ls ".claude/rules/$ARGUMENTS" 2>/dev/null \
-  || ls .claude/rules/*.md
+if [ -n "$ARGUMENTS" ]; then
+  case "$ARGUMENTS" in
+    *[\"\'\\;\|\&\`\$\(\)<>]*) echo "error: unsafe characters in argument: $ARGUMENTS"; exit 1;;
+    *) ls ".claude/rules/$ARGUMENTS" 2>/dev/null;;
+  esac
+else
+  ls .claude/rules/*.md
+fi
 ```
 
 存在しないファイル名なら以下を出力して終了：
