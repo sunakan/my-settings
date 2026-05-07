@@ -373,3 +373,15 @@ brew "oxipng"
 # 使い方例(.envrc)
 # export HOGE=$(op read "op://Personal/アイテム名/password")
 cask "1password-cli"
+
+#
+# switchhosts
+#
+# URL
+# - https://formulae.brew.sh/cask/switchhosts
+# GitHub
+# - https://github.com/oldj/SwitchHosts
+#
+# 概要
+# - /etc/hosts を GUI で管理・切り替えするツール
+cask "switchhosts"
