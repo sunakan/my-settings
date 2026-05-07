@@ -129,5 +129,6 @@
   "theme": "dark-daltonized",
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true
-  }
+  },
+  "mcpServers": {}
 }
