@@ -1,7 +1,7 @@
 ---
 name: review-skills
-description: "Claude Code スキル（SKILL.md）をベストプラクティスに照らしてレビューし、結果を SKILL.md と同じディレクトリの REVIEW.md に書き出す。引数なしで .claude/skills/ 全スキルを並列一括レビュー、引数ありで単体レビュー。frontmatter の過不足・本文の書き方・サブエージェントパターン・安全性を確認する。"
-when_to_use: "スキルを新規作成したあと、既存スキルを改善したいとき、SKILL.md の内容が正しいか確認したいときに使う。引数なしで .claude/skills/ 全体を一括レビューできる。"
+description: "Claude Code スキル（SKILL.md）をベストプラクティスに照らしてレビューし、結果を SKILL.md と同じディレクトリの REVIEW.md に書き出す。引数なしでプロジェクトの .claude/skills/ 全スキルを並列一括レビュー、引数ありで単体レビュー。frontmatter の過不足・本文の書き方・サブエージェントパターン・安全性を確認する。"
+when_to_use: "スキルを新規作成したあと、既存スキルを改善したいとき、SKILL.md の内容が正しいか確認したいときに使う。引数なしでプロジェクトの .claude/skills/ 全体を一括レビューできる。"
 disable-model-invocation: true
 allowed-tools: Read Bash(find *) Bash(ls *) Bash(wc *) Write Edit Agent
 argument-hint: "[skill-name または SKILL.md のパス]（省略時は .claude/skills/ を一括レビュー）"
@@ -26,7 +26,7 @@ agent: general-purpose
 
 ### Step 1: スキル一覧の取得
 
-`.claude/skills/` 配下のディレクトリを `ls` で取得する。各ディレクトリに `SKILL.md` が存在するものだけをレビュー対象とする（`find .claude/skills/*/SKILL.md` で確認）。
+対象は **CWD の `.claude/skills/`**（プロジェクトスキル）であり、`~/.claude/skills/`（個人スコープ）ではない。CWD 配下のディレクトリを `ls .claude/skills/` で取得し、各ディレクトリに `SKILL.md` が存在するものだけをレビュー対象とする（`find .claude/skills/*/SKILL.md` で確認）。
 
 対象が 0 件の場合は「レビュー対象のスキルが見つかりませんでした」と伝えて終了する。
 
@@ -34,15 +34,54 @@ agent: general-purpose
 
 スキルごとに Agent ツール（`subagent_type: general-purpose`、書き込みを含むため `Explore` は不可）を **1 つのメッセージ内に全て並べて**起動する。
 
-各サブ Agent へのプロンプトテンプレート（`<name>` を実際のスキル名、`<path>` を SKILL.md の実パスに置換する）:
+各サブ Agent へのプロンプトテンプレート（`<name>` を実際のスキル名に置換する）。サブ Agent が外部の SKILL.md を再読み込みしないよう、レビュー基準と出力フォーマットは下記に inline で展開する:
 
 ---
 
 あなたは Claude Code スキルのレビュアーです。
 
-**タスク**: `.claude/skills/<name>/SKILL.md` をレビューし、結果を `.claude/skills/<name>/REVIEW.md` に書き出してください。
+**タスク**: `.claude/skills/<name>/SKILL.md` を Read で読み込み、下記のレビュー基準でレビューし、結果を `.claude/skills/<name>/REVIEW.md` に書き出してください（既存ファイルは上書き）。同ディレクトリの supporting files（`*.md`/`*.sh`/`*.py` 等）は `ls` で確認してください。
 
-**レビュー基準と出力フォーマット**: `~/.claude/skills/review-skills/SKILL.md` を Read で読み込み、「レビュー手順」（チェック [1]〜[4]）と「出力先への書き込み」セクションに従ってください。ファイルが見つからない場合は「完了: <name> (スキップ: review-skills/SKILL.md が見つかりません)」と返してください。
+**レビュー基準（全項目チェック）**:
+
+[1] Frontmatter
+- `description`: 「いつ呼ぶか」を判断できる具体性。最初の一文で呼び出し判断できるか
+- `description` + `when_to_use` 合計 1,536 文字以内か
+- `argument-hint`: 引数を受け取るスキルに記載されているか
+- `arguments`: 複数引数なら名前付き定義（`$0/$1` より `$name`）
+- `disable-model-invocation`: 副作用大（デプロイ・コミット・削除・本番）に `true`
+- `allowed-tools`: 繰り返し確認の出るツールが事前承認されているか
+- `context: fork`: 主出力がファイル書き込みなら付与（A）、会話継続が主目的なら付けない（B）。レビューには (A)/(B) のどちらか・根拠・現在の設定が正しいか・推奨を明記
+- `agent`: `context: fork` を付ける場合のみ確認。読み取り専用なら `Explore`、書き込み含むなら省略（`general-purpose` がデフォルト）
+
+[2] 本文
+- 行数（`wc -l` で確認、500 超なら supporting files への移動を提案）
+- 命令形か（「このスキルは〜」のような説明文は不要）
+- 動的コンテキストは `` !`command` `` で取得しているか
+- 引数展開（`$ARGUMENTS`/`$0`/名前付き）の宣言と使い方が一致しているか
+- パス・コマンドが具体的か
+- 仕様書・長いサンプル・テンプレートが本文に直書きされていないか
+- フォールバック（引数なし・想定外）への対処があるか
+
+[3] サブエージェントパターン（Agent tool 使用時のみ）
+- 並列起動の明示（複数 Agent を 1 メッセージ内に並べる指示）
+- プロンプトテンプレートの記載
+- 待機・集約の順序
+- `subagent_type` の選定（読み取りのみ `Explore`／書き込み `general-purpose`）
+- `context: fork` の使い分け
+
+[4] セキュリティ
+- 破壊的操作に `disable-model-invocation: true`
+- 秘密情報のハードコードなし
+- `allowed-tools` の過剰許可なし（`Bash` 全許可など。`Bash(git *)` のように絞る）
+- `` !`command` `` への shell injection リスクなし
+
+**REVIEW.md の構成**（既存は上書き）:
+- 見出し: `# REVIEW: <name>`
+- 引用 2 行: `> レビュー日時: <YYYY-MM-DD>` / `> ファイル: <SKILL.md の実パス>`
+- セクション: `## 総評`（2〜3 文）/ `## ✅ 良い点` / `## ⚠️ 改善提案（任意対応）` / `## ❌ 問題点（要修正）` / `## 修正後の frontmatter サンプル（変更がある場合のみ）`
+- 改善提案・問題点は `- **<項目>**: <現状/内容> → <改善案/修正後コード例>` 形式
+- frontmatter サンプルは ` ```yaml ` のコードブロックで囲む
 
 完了したら「完了: <name>」とだけ返してください。
 
