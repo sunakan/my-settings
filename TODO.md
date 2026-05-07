@@ -3,16 +3,6 @@
 ## 検討中
 
 
-### スキル: `commit`
-
-> REVIEW: `claudecode/skills/commit/REVIEW.md`
-
-⚠️ 改善提案 2件（❌ 問題点なし）:
-- `when_to_use` 欠如
-- `context: fork` 欠如（ただしコミット後の結果をメイン会話に戻す必要があるため意図的な可能性あり）
-
----
-
 ### スキル: `review-git-diff-size`
 
 > REVIEW: `claudecode/skills/review-git-diff-size/REVIEW.md`

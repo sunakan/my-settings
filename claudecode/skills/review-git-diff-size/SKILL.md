@@ -1,7 +1,10 @@
 ---
 name: review-git-diff-size
 description: `/review-git-diff-size` で呼ばれた時にステージング済みの差分が1コミット分として適切な粒度か評価する。大きすぎる場合は分割案を提示する
+disable-model-invocation: true
 allowed-tools: Bash(git diff *)
+when_to_use: "コミット前に差分が1コミット分として適切か確認したいとき、差分が大きすぎて分割すべきか迷っているとき"
+# context: fork は付けない — 評価結果をユーザーに会話で提示することが主目的のため（ファイル出力がメインになったら検討）
 ---
 
 ## コンテキスト
