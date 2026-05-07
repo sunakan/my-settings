@@ -22,6 +22,10 @@ allowed-tools: Read Bash(find *) Bash(ls *) Bash(wc *) Write Edit
    - `.claude/skills/$ARGUMENTS/SKILL.md`（プロジェクトスコープ）
    - `~/.claude/skills/$ARGUMENTS/SKILL.md`（個人スコープ）
 
+場所が特定できない場合（カレントに `SKILL.md` がない・スキル名が見つからない場合）:
+- `~/.claude/skills/` 配下のスキル一覧を `ls` で表示する
+- 「レビューするスキル名を指定してください」とユーザーに確認を求めて終了する
+
 場所が特定できたら、**SKILL.md を Read ツールで読み込む**。
 同じディレクトリにある supporting files（`*.md`, `*.sh`, `*.py` など）も `ls` で確認する。
 
