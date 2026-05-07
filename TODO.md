@@ -3,17 +3,6 @@
 ## 検討中
 
 
-### スキル: `review-claude-skills`
-
-> REVIEW: `claudecode/skills/review-claude-skills/REVIEW.md`
-
-⚠️ 改善提案 3件（❌ 問題点なし）:
-- `context: fork` 欠如（Web 検索・ファイル読み込み・評価・書き出しがメインコンテキストを汚染）
-- `when_to_use` 欠如
-- 参照先 `.claude/rules/skill-design.md` が実在するか確認が必要
-
----
-
 ### スキル: `commit`
 
 > REVIEW: `claudecode/skills/commit/REVIEW.md`
