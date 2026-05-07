@@ -12,6 +12,7 @@
 # mise ls-remote --all
 # mise ls-remote go
 go = ['1.26.1']
+"go:golang.org/x/tools/gopls" = "latest"
 ruby = ['4.0.1']
 nodejs = ['24.13.1']
 "npm:@google/gemini-cli" = "latest"
@@ -50,7 +51,6 @@ version = "2.0.1"
 platforms.macos-arm64.url = "https://github.com/grafana/pyroscope/releases/download/v{{version}}/profilecli_{{version}}_darwin_arm64.tar.gz"
 platforms.macos-arm64.checksum = "sha256:2cee2f7a6b695ac6545ed4b284505290485778c43cf720ad468e42e10e2ce2c9"
 
-# experimental = trueが必要
 # cage: ClaudeCodeをぶん回すために必要
 #"go:github.com/Warashi/cage" = "latest"
 [tools."http:cage"]
@@ -64,9 +64,6 @@ platforms.macos-arm64.checksum = "sha256:29ccee40b34bb4013700e03b21882914f2625e8
 # 例: .go-version
 idiomatic_version_file_enable_tools = ["go"]
 
-# mise の実験的機能を有効にする
-# Go backend (go:xxx 形式でのツールインストール) を使うために必要
-#experimental = true
 
 [env]
 # geminiを起動すると、以下のような警告が出るため抑制する
