@@ -3,17 +3,6 @@
 ## 検討中
 
 
-### スキル: `review-skills`
-
-> REVIEW: `claudecode/skills/review-skills/REVIEW.md`
-
-⚠️ 改善提案 3件（❌ 問題点なし）:
-- `context: fork` 欠如（ファイル読み込み・レビュー・Write の独立処理群がメインコンテキストを汚染）
-- `allowed-tools` に `Write` が欠如している可能性（REVIEW.md 書き出し時に確認プロンプトが出る）
-- サブエージェントのプロンプトテンプレート内に `subagent_type: general-purpose` を明記すると一貫性が高まる
-
----
-
 ### スキル: `review-claude-skills`
 
 > REVIEW: `claudecode/skills/review-claude-skills/REVIEW.md`
