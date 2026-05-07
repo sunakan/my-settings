@@ -2,10 +2,9 @@
 name: review-global-skills
 description: "claudecode/skills/ 配下の全スキルをサブエージェントで並列レビューし、各スキルの隣に REVIEW.md を書き出す。全スキルのレビュー完了後に会話上でサマリを表示する。"
 when_to_use: "複数スキルをまとめてレビューしたいとき、claudecode/skills/ 全体の品質を一括確認したいとき。"
-allowed-tools: Read Bash(ls *) Bash(find *) Agent Write
+allowed-tools: Read Bash(ls *) Bash(find claudecode/skills/*) Agent Write
 context: fork
 # サブ Agent プロンプトは外部参照（review-skills/SKILL.md）— 単一ソース維持のため inline 化しない
-# Bash(find *) はパス絞り込みなし intentional — claudecode/skills/ 以外への find 拡張余地を残すため
 ---
 
 ## 制約
