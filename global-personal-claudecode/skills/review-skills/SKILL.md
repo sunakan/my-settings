@@ -39,7 +39,8 @@ SKILL.md の内容を読んだあと、以下の項目を**全て**チェック�
 | `arguments` | 複数引数を使うなら名前付き定義があるか（`$0/$1` より `$name` の方が保守性が高い） |
 | `disable-model-invocation` | 副作用の大きい操作（デプロイ・コミット・削除・本番操作）に `true` が付いているか |
 | `allowed-tools` | 繰り返し確認が出るツールが事前承認されているか |
-| `context` + `agent` | 読み取り専用の調査スキルなら `context: fork` + `agent: Explore` が適切か |
+| `context` | スキルが独立して完結する処理（調査・生成・更新など）なら `context: fork` を付けているか。付けないと中間処理がメインコンテキストを汚染する。書き込みを含む場合も `context: fork` のみで問題なし |
+| `agent` | `context: fork` を付ける場合のみ確認。読み取り専用なら `agent: Explore`、書き込みを含むなら省略（`general-purpose` がデフォルト）。`context: fork` なしで `agent` だけ書いても無視される |
 
 ### チェック [2] 本文（Body）の品質
 
