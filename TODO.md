@@ -2,16 +2,6 @@
 
 ## 検討中
 
-### スキル: `next-todo`
-
-> REVIEW: `claudecode/skills/next-todo/REVIEW.md`
-
-⚠️ 改善提案 2件（❌ 問題点なし）:
-- **`Bash(grep *)` の用途が不明**: `allowed-tools` に `Bash(grep *)` が含まれているが本文中で `grep` を使う箇所が見当たらない。実際に使用しないなら削除して権限を最小化することを検討（`Read` ツールで代替可能）。
-- **Step 5 の確認文言の使い分け基準が暗黙**: 「進めますか？」または「どの手段で進めますか？」の使い分け基準を明示（対応手段が複数なら後者、単一案なら前者）すると迷いが減る。
-
----
-
 ### スキル: `review-claude-rules`
 
 > REVIEW: `claudecode/skills/review-claude-rules/REVIEW.md`

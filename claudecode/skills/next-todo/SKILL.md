@@ -3,7 +3,7 @@ name: next-todo
 description: "TODO.md の「検討中」セクションから次の作業項目を取り出し、現状・課題/背景・対応手段・効果・期待の順で提示してユーザーに確認を求める。TODO.md がなければ「TODOがありません」と返す"
 when_to_use: "次のTODO項目を確認したいとき、TODO項目に着手する前に内容を整理したいとき"
 disable-model-invocation: true
-allowed-tools: Read Edit Bash(grep *)
+allowed-tools: Read Edit
 # context: fork は付けない — Step 5 の「進めますか？」確認がメイン会話で機能する必要があるため（ファイル出力がメインになったら検討）
 ---
 
@@ -45,7 +45,7 @@ TODO.md の項目に `REVIEW.md` などの参照ファイルへのパスが記�
 
 ### Step 5: 確認
 
-提示後、「進めますか？」または「どの手段で進めますか？」とユーザーに確認する。
+提示後、対応手段が複数ある場合は「どの手段で進めますか？」、単一案の場合は「進めますか？」とユーザーに確認する。
 
 実装はユーザーが確認してから開始すること。
 
