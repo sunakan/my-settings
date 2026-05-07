@@ -2,18 +2,6 @@
 
 ## 検討中
 
-### スキル: `review-claude-skills`
-
-> REVIEW: `claudecode/skills/review-claude-skills/REVIEW.md`
-
-⚠️ 改善提案 4件（❌ 問題点なし）:
-- **`review-skills` との責務重複の明文化**: 同リポジトリの `review-skills`（Agent 並列・REVIEW.md 書き出し）との違いを description か冒頭に明記すると使い分けが容易になる。重複が大きい場合は統合も検討。
-- **`$ARGUMENTS` クォートなしの shell injection リスク**: `ls .claude/skills/"$ARGUMENTS"/SKILL.md 2>/dev/null` のようにクォートするのが安全。
-- **Web 検索の頻度判定が曖昧**: 「時間が経っている場合」の判定基準を具体化（例: `SKILL_REVIEW.md` に最終 Web 確認日時を記録し N 日以上経過で再検索）すると判断が安定する。
-- **`agent` フィールドのコメント補足**: 書き込みありのため `general-purpose` がデフォルトで正しいが、`agent: general-purpose` を明示するかコメントで意図を残すと保守性が上がる。
-
----
-
 ### スキル: `review-git-diff-size`
 
 > REVIEW: `claudecode/skills/review-git-diff-size/REVIEW.md`

@@ -1,11 +1,12 @@
 ---
 name: review-claude-skills
-description: 既存の SKILL.md（`.claude/skills/<name>/SKILL.md`）を 8 観点（one skill one job・description は load-bearing・冒頭に最重要事項・500 行以下・CLAUDE.md との重複・無駄な Bash inline・disable-model-invocation の妥当性・三人称表記）で機械的にレビューし、改善提案を出す。引数でスキル名を指定すれば単体、省略時は全スキルを対象。新規 SKILL.md 作成や既存スキルの改善時に使う
+description: "既存の SKILL.md（`.claude/skills/<name>/SKILL.md`）を 8 観点で機械的にレビューし改善提案を出す。引数でスキル名を指定すれば単体、省略時は全スキルを対象。新規 SKILL.md 作成や既存スキルの改善時に使う。サブエージェント並列・REVIEW.md 書き出しが必要なら review-skills を使う"
 when_to_use: "新規 SKILL.md を作成したとき、既存スキルを改善したとき、スキルの品質を確認したいとき"
 disable-model-invocation: true
 allowed-tools: Read Write Edit Bash(ls *) WebSearch WebFetch
 argument-hint: "[skill-name]"
 context: fork
+# agent は省略 — 書き込みありのため general-purpose がデフォルト = 正しい
 ---
 
 ## 目的
@@ -32,7 +33,7 @@ context: fork
 引数 `$ARGUMENTS`（スキル名）が指定されていれば単体、省略時は全スキル。
 
 ```!
-[ -n "$ARGUMENTS" ] && ls .claude/skills/$ARGUMENTS/SKILL.md 2>/dev/null || ls .claude/skills/*/SKILL.md
+[ -n "$ARGUMENTS" ] && ls ".claude/skills/$ARGUMENTS/SKILL.md" 2>/dev/null || ls .claude/skills/*/SKILL.md
 ```
 
 存在しないスキル名なら以下を出力して終了：
@@ -43,9 +44,9 @@ context: fork
 <対象一覧>
 ```
 
-## Step 2: 公式ベスプラを web 検索で再確認（必要時）
+## Step 2: 公式ベスプラを web 検索で再確認
 
-`/review-claude-skills` 初回実行時、または最終確認から時間が経っている場合、以下を web 検索：
+以下を毎回 web 検索する：
 
 - 公式: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices
 - 公式: https://code.claude.com/docs/en/skills
