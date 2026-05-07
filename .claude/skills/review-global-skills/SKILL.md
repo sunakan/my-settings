@@ -4,6 +4,7 @@ description: "claudecode/skills/ 配下の全スキルをサブエージェン�
 when_to_use: "複数スキルをまとめてレビューしたいとき、claudecode/skills/ 全体の品質を一括確認したいとき。"
 allowed-tools: Read Bash(ls *) Bash(find *) Agent Write
 context: fork
+# サブ Agent プロンプトは外部参照（review-skills/SKILL.md）— 単一ソース維持のため inline 化しない
 ---
 
 ## 制約
