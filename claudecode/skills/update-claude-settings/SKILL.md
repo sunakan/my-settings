@@ -3,7 +3,7 @@ name: update-claude-settings
 description: /update-claude-settings で呼ばれた時、Web検索でClaude Codeの最新ベストプラクティス・新オプション・コミュニティの工夫を調査し、現在の設定と照らし合わせて改善候補をTODO.mdの「検討中」セクションに追記する
 when_to_use: "Claude Code の設定を見直したいとき、新しいベストプラクティスを調査したいとき、my-settings リポジトリで設定改善候補をリストアップしたいとき"
 disable-model-invocation: true
-allowed-tools: WebSearch WebFetch Read Bash(ls ~/.claude/*) Edit Agent
+allowed-tools: WebSearch WebFetch Read Bash(ls /Users/user01/.claude/*) Edit Task
 context: fork
 ---
 
@@ -29,28 +29,28 @@ context: fork
 **Agent A — hooks・セキュリティ系**（subagent_type: Explore）
 
 以下のキーワードで WebSearch し、Claude Code の hooks に関する新しいベストプラクティス・パターン・設定例を調査する:
-- "claude code hooks best practices 2025"
+- "claude code hooks best practices latest"
 - "claude code PreToolUse PostToolUse UserPromptSubmit examples"
 - "claude code hooks security"
 
 **Agent B — settings.json・plugins 系**（subagent_type: Explore）
 
 以下のキーワードで WebSearch し、settings.json の新オプション・公式 plugins・MCP サーバーの推奨事例を調査する:
-- "claude code settings.json new options 2025"
+- "claude code settings.json new options latest"
 - "claude code plugins official"
 - "claude code mcpServers examples"
 
 **Agent C — GitHub コミュニティ設定**（subagent_type: Explore）
 
 以下のキーワードで WebSearch し、GitHub で公開されている設定事例・CLAUDE.md のベストプラクティスを調査する:
-- "github claude code settings community 2025"
+- "github claude code settings community latest"
 - "claude code CLAUDE.md examples github"
 - "claude code skills commands github examples"
 
 **Agent D — 日本語記事（Zenn / Qiita）**（subagent_type: Explore）
 
 以下のキーワードで WebSearch し、Zenn・Qiita の日本語記事から Claude Code の工夫・設定 tips を調査する:
-- "site:zenn.dev claude code 設定 2025"
+- "site:zenn.dev claude code 設定 最新"
 - "site:qiita.com claude code ベストプラクティス"
 - "claude code 工夫 tips 日本語"
 
@@ -61,7 +61,8 @@ Agent A〜D の結果を受け取り、以下の順でフィルタリングす�
 1. **既に実装済み**（settings.json・hooks・skills の現状と一致） → スキップ
 2. **やらないリストに載っている** → 原則スキップ。「重大なセキュリティリスクがある」など絶対に対応すべきと判断した場合のみ、タイトル先頭に `【特例】` を付けて追記する
 3. **検討中に既に載っている** → スキップ
-4. **残った候補** → Phase 4 へ
+4. **同セッション内で既に追記済みのタイトルと重複** → スキップ（4 Agent が類似キーワードで同一トピックを返す場合を防ぐ）
+5. **残った候補** → Phase 4 へ
 
 ## Phase 4: TODO.md への追記
 
