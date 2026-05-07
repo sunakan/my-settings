@@ -5,6 +5,7 @@ when_to_use: "複数スキルをまとめてレビューしたいとき、claude
 allowed-tools: Read Bash(ls *) Bash(find *) Agent Write
 context: fork
 # サブ Agent プロンプトは外部参照（review-skills/SKILL.md）— 単一ソース維持のため inline 化しない
+# Bash(find *) はパス絞り込みなし intentional — claudecode/skills/ 以外への find 拡張余地を残すため
 ---
 
 ## 制約
@@ -49,4 +50,19 @@ context: fork
 | <name>  | ...        | N件      | N件        |
 ```
 
-サマリ出力後、❌ 問題点があるスキルについて「SKILL.md を修正しますか？」とユーザーに確認する。
+サマリ出力後、以下の順で確認する:
+
+1. ❌ 問題点があるスキルについて「SKILL.md を修正しますか？」とユーザーに確認する。
+2. ⚠️ 改善提案があるスキルについて「⚠️ 改善提案を TODO.md の「検討中」セクションに追記しますか？」とユーザーに確認する。承認された場合は `./TODO.md` の「検討中」セクション末尾に以下のフォーマットで追記する（❌ 修正済みのスキルはスキップ。「検討中」セクションが存在しない場合はファイル末尾に `## 検討中` を追加してから追記する）:
+
+```markdown
+### スキル: `<name>`
+
+> REVIEW: `claudecode/skills/<name>/REVIEW.md`
+
+⚠️ 改善提案 N件（❌ 問題点なし）:
+- <改善提案1>
+- <改善提案2>
+
+---
+```
