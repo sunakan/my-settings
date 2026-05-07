@@ -4,26 +4,6 @@
 
 
 
-### スキル: `update-claude-settings`
-
-> REVIEW: `claudecode/skills/update-claude-settings/REVIEW.md`
-
-⚠️ 改善提案 2件（❌ 問題点なし）:
-- `when_to_use` 欠如
-- `allowed-tools` の `Edit` が実際に使われているか確認（Write で代替可能なら削除）
-
----
-
-### スキル: `next-todo`
-
-> REVIEW: `claudecode/skills/next-todo/REVIEW.md`
-
-⚠️ 改善提案 3件（❌ 問題点なし）:
-- `context: fork` と対話フロー（Step 5 の「進めますか？」確認）の整合性確認（fork なら出力がメイン会話に戻らない可能性あり）
-- `allowed-tools: Bash(cat *)` → `Read` で代替可能なため削除を検討
-- `context: fork` を維持するなら `agent: Explore` の追加を検討（ただし Step 2 の Edit があるため省略も合理的）
-
----
 
 ### スキル: `review-claude-rules`
 
