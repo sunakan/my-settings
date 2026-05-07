@@ -2,15 +2,6 @@
 
 ## 検討中
 
-### スキル: `commit`
-
-> REVIEW: `claudecode/skills/commit/REVIEW.md`
-
-⚠️ 改善提案 1件（❌ 問題点なし）:
-- **description の trigger 表現**: `disable-model-invocation: true` のため description は自動呼び出し判定に使われないが、冒頭を「ステージング済みの変更に対してコミットメッセージ候補 3 つを提示しおすすめでコミットする。`/commit` で呼ぶ。」のように呼び出し条件を先頭に凝縮すると意図がより明確になる。
-
----
-
 ### スキル: `next-todo`
 
 > REVIEW: `claudecode/skills/next-todo/REVIEW.md`
