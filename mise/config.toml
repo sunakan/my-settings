@@ -44,8 +44,19 @@ eksctl = '0.220.0'
 kubectl = '1.34.3'
 cloudflared = '2026.3.0'
 
+# profilecli: PyroscopeにpprofプロファイルのやりとりをするためのCLIツール
+[tools."http:profilecli"]
+version = "2.0.1"
+platforms.macos-arm64.url = "https://github.com/grafana/pyroscope/releases/download/v{{version}}/profilecli_{{version}}_darwin_arm64.tar.gz"
+platforms.macos-arm64.checksum = "sha256:2cee2f7a6b695ac6545ed4b284505290485778c43cf720ad468e42e10e2ce2c9"
+
 # experimental = trueが必要
-"go:github.com/Warashi/cage" = "latest"
+# cage: ClaudeCodeをぶん回すために必要
+#"go:github.com/Warashi/cage" = "latest"
+[tools."http:cage"]
+version = "0.1.13"
+platforms.macos-arm64.url = "https://github.com/Warashi/cage/releases/download/v{{version}}/cage_Darwin_arm64.tar.gz"
+platforms.macos-arm64.checksum = "sha256:29ccee40b34bb4013700e03b21882914f2625e81749dcd0dc3deec408cbac477"
 
 [settings]
 # idiomatic version fileを有効化するかどうか
@@ -55,7 +66,7 @@ idiomatic_version_file_enable_tools = ["go"]
 
 # mise の実験的機能を有効にする
 # Go backend (go:xxx 形式でのツールインストール) を使うために必要
-experimental = true
+#experimental = true
 
 [env]
 # geminiを起動すると、以下のような警告が出るため抑制する
