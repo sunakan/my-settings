@@ -34,7 +34,6 @@ brew bundle           # Homebrew パッケージの同期
 | `git/ignore` | `~/.config/git/ignore` |
 | `tmux/tmux.conf` | `~/.config/tmux/tmux.conf` |
 | `nvim/lua/config/options.lua` | `~/.config/nvim/lua/config/options.lua` |
-| `global-personal-claudecode/commands` | `~/.claude/commands` |
 | `global-personal-claudecode/hooks` | `~/.claude/hooks` |
 | `global-personal-claudecode/rules` | `~/.claude/rules` |
 | `global-personal-claudecode/settings.json` | `~/.claude/settings.json` |
@@ -49,7 +48,6 @@ Claude Code のグローバル設定を管理。`setup.sh` で `~/.claude/` へ�
 | パス | 役割 |
 |---|---|
 | `settings.json` | モデル・権限・OpenTelemetry・hooks のグローバル設定 |
-| `commands/*.md` | スラッシュコマンド（1ファイル = 1コマンド） |
 | `rules/*.md` | path-scoped ルール（特定ファイル編集時に自動 load） |
 | `skills/<name>/SKILL.md` | カスタムスキル（1ディレクトリ = 1スキル） |
 | `hooks/block-sensitive-files.sh` | PreToolUse hook でセンシティブファイルへの Bash アクセスをブロック |

@@ -20,7 +20,6 @@ LINKS=(
   "$(pwd)/git/ignore:$HOME/.config/git/ignore"
   "$(pwd)/tmux/tmux.conf:$HOME/.config/tmux/tmux.conf"
   "$(pwd)/nvim/lua/config/options.lua:$HOME/.config/nvim/lua/config/options.lua"
-  "$(pwd)/global-personal-claudecode/commands:$HOME/.claude/commands"
   "$(pwd)/global-personal-claudecode/hooks:$HOME/.claude/hooks"
   "$(pwd)/global-personal-claudecode/rules:$HOME/.claude/rules"
   "$(pwd)/global-personal-claudecode/settings.json:$HOME/.claude/settings.json"
