@@ -20,11 +20,11 @@ LINKS=(
   "$(pwd)/git/ignore:$HOME/.config/git/ignore"
   "$(pwd)/tmux/tmux.conf:$HOME/.config/tmux/tmux.conf"
   "$(pwd)/nvim/lua/config/options.lua:$HOME/.config/nvim/lua/config/options.lua"
-  "$(pwd)/global-personal-claudecode/hooks:$HOME/.claude/hooks"
-  "$(pwd)/global-personal-claudecode/rules:$HOME/.claude/rules"
-  "$(pwd)/global-personal-claudecode/settings.json:$HOME/.claude/settings.json"
-  "$(pwd)/global-personal-claudecode/skills:$HOME/.claude/skills"
-  "$(pwd)/global-personal-claudecode/CLAUDE.md:$HOME/.claude/CLAUDE.md"
+  "$(pwd)/claudecode/hooks:$HOME/.claude/hooks"
+  "$(pwd)/claudecode/rules:$HOME/.claude/rules"
+  "$(pwd)/claudecode/settings.json:$HOME/.claude/settings.json"
+  "$(pwd)/claudecode/skills:$HOME/.claude/skills"
+  "$(pwd)/claudecode/CLAUDE.md:$HOME/.claude/CLAUDE.md"
 )
 
 for entry in "${LINKS[@]}"; do

@@ -34,14 +34,14 @@ brew bundle           # Homebrew パッケージの同期
 | `git/ignore` | `~/.config/git/ignore` |
 | `tmux/tmux.conf` | `~/.config/tmux/tmux.conf` |
 | `nvim/lua/config/options.lua` | `~/.config/nvim/lua/config/options.lua` |
-| `global-personal-claudecode/hooks` | `~/.claude/hooks` |
-| `global-personal-claudecode/rules` | `~/.claude/rules` |
-| `global-personal-claudecode/settings.json` | `~/.claude/settings.json` |
-| `global-personal-claudecode/skills` | `~/.claude/skills` |
+| `claudecode/hooks` | `~/.claude/hooks` |
+| `claudecode/rules` | `~/.claude/rules` |
+| `claudecode/settings.json` | `~/.claude/settings.json` |
+| `claudecode/skills` | `~/.claude/skills` |
 
 `zshrc` はリンク対象外（手動リンクが必要）。
 
-## global-personal-claudecode/
+## claudecode/
 
 Claude Code のグローバル設定を管理。`setup.sh` で `~/.claude/` へリンクされる。
 
