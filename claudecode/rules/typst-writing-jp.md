@@ -1,8 +1,9 @@
 ---
-name: technical-writing-jp
-description: "技術書を読みやすくするガイドライン"
-applyTo: "**/*.typ"
+paths:
+  - "**/*.typ"
 ---
+
+# 日本語技術書 文章ガイドライン
 
 ## 1. 読点は一文につき最大ひとつ
 

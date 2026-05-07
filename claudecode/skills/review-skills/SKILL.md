@@ -1,29 +1,77 @@
 ---
 name: review-skills
-description: "Claude Code スキル（SKILL.md）をベストプラクティスに照らしてレビューし、結果を .claude/SKILLS_REVIEW.md に書き出す。frontmatter の過不足・本文の書き方・サブエージェントパターン・安全性を確認する。"
-when_to_use: "スキルを新規作成したあと、既存スキルを改善したいとき、SKILL.md の内容が正しいか確認したいときに使う。"
-argument-hint: <skill-name または SKILL.md のパス>
-allowed-tools: Read Bash(find *) Bash(ls *) Bash(wc *) Write Edit
+description: "Claude Code スキル（SKILL.md）をベストプラクティスに照らしてレビューし、結果を SKILL.md と同じディレクトリの REVIEW.md に書き出す。引数なしで .claude/skills/ 全スキルを並列一括レビュー、引数ありで単体レビュー。frontmatter の過不足・本文の書き方・サブエージェントパターン・安全性を確認する。"
+when_to_use: "スキルを新規作成したあと、既存スキルを改善したいとき、SKILL.md の内容が正しいか確認したいときに使う。引数なしで .claude/skills/ 全体を一括レビューできる。"
+argument-hint: "[skill-name または SKILL.md のパス]（省略時は .claude/skills/ を一括レビュー）"
+allowed-tools: Read Bash(find *) Bash(ls *) Bash(wc *) Write Edit Agent
 ---
 
 ## 制約
 
 **git 操作は一切行わないこと**（commit・add・push・status・diff 等すべて禁止）。
 
-## 調査対象の特定
+## モードの判定
 
 引数: `$ARGUMENTS`
 
+- `$ARGUMENTS` が空 → **一括レビューモード**（後述）
+- `$ARGUMENTS` が空でない → **単体レビューモード**（後述）
+
+---
+
+## 一括レビューモード（引数なし）
+
+### Step 1: スキル一覧の取得
+
+`.claude/skills/` 配下のディレクトリを `ls` で取得する。各ディレクトリに `SKILL.md` が存在するものだけをレビュー対象とする（`find .claude/skills/*/SKILL.md` で確認）。
+
+対象が 0 件の場合は「レビュー対象のスキルが見つかりませんでした」と伝えて終了する。
+
+### Step 2: 並列レビュー
+
+スキルごとに `general-purpose` サブ Agent を **1 つのメッセージ内に全て並べて**起動する。
+
+各サブ Agent へのプロンプトテンプレート（`<name>` を実際のスキル名、`<path>` を SKILL.md の実パスに置換する）:
+
+---
+
+あなたは Claude Code スキルのレビュアーです。
+
+**タスク**: `.claude/skills/<name>/SKILL.md` をレビューし、結果を `.claude/skills/<name>/REVIEW.md` に書き出してください。
+
+**レビュー基準と出力フォーマット**: `~/.claude/skills/review-skills/SKILL.md` を Read で読み込み、「レビュー手順」（チェック [1]〜[4]）と「出力先への書き込み」セクションに従ってください。ファイルが見つからない場合は「完了: <name> (スキップ: review-skills/SKILL.md が見つかりません)」と返してください。
+
+完了したら「完了: <name>」とだけ返してください。
+
+---
+
+### Step 3: サマリの出力
+
+全サブ Agent が完了したら、各 `REVIEW.md` を Read して会話上に以下の形式でサマリを出力する:
+
+```markdown
+## レビュー完了サマリ
+
+| スキル名 | 総評（一行） | ❌ 問題点 | ⚠️ 改善提案 |
+|---------|------------|---------|-----------|
+| <name>  | ...        | N件      | N件        |
+```
+
+サマリ出力後、❌ 問題点があるスキルについて「SKILL.md を修正しますか？」とユーザーに確認する。
+
+---
+
+## 単体レビューモード（引数あり）
+
 以下の順で SKILL.md の場所を特定する:
 
-1. `$ARGUMENTS` が空 → 現在のディレクトリに `SKILL.md` があるか確認
-2. `$ARGUMENTS` が `/` を含むパス → そのパスを直接 Read
-3. `$ARGUMENTS` が名前のみ → 以下の順に探す:
+1. `$ARGUMENTS` が `/` を含むパス → そのパスを直接 Read
+2. `$ARGUMENTS` が名前のみ → 以下の順に探す:
    - `.claude/skills/$ARGUMENTS/SKILL.md`（プロジェクトスコープ）
    - `~/.claude/skills/$ARGUMENTS/SKILL.md`（個人スコープ）
 
-場所が特定できない場合（カレントに `SKILL.md` がない・スキル名が見つからない場合）:
-- `~/.claude/skills/` 配下のスキル一覧を `ls` で表示する
+場所が特定できない場合:
+- `.claude/skills/` と `~/.claude/skills/` 配下のスキル一覧を `ls` で表示する
 - 「レビューするスキル名を指定してください」とユーザーに確認を求めて終了する
 
 場所が特定できたら、**SKILL.md を Read ツールで読み込む**。
@@ -79,48 +127,41 @@ SKILL.md の内容を読んだあと、以下の項目を**全て**チェック�
 
 ## 出力先への書き込み
 
-レビュー結果は `.claude/SKILLS_REVIEW.md`（プロジェクトルートの `.claude/` ディレクトリ）に書き出す。
-
-**ファイルの扱い**:
-- ファイルが存在しない → 新規作成
-- ファイルが存在し、同じスキル名のセクション（`## <skill-name>`）がある → そのセクションを Edit で上書き
-- ファイルが存在するが同名セクションがない → ファイル末尾に追記
+レビュー結果は SKILL.md と同じディレクトリの `REVIEW.md` に書き出す（例: `claudecode/skills/commit/REVIEW.md`）。既存ファイルは上書きする。
 
 **書き込むフォーマット**:
 
 ```markdown
-## <skill-name>
+# REVIEW: <skill-name>
 
 > レビュー日時: <YYYY-MM-DD>
 > ファイル: <SKILL.md の実際のパス>
 
-### 総評
+## 総評
 <2〜3文。スキルの目的と全体的な品質の評価>
 
-### ✅ 良い点
+## ✅ 良い点
 - <具体的に何が良いか（ファイル内の該当箇所を示す）>
 
-### ⚠️ 改善提案（任意対応）
+## ⚠️ 改善提案（任意対応）
 - **<項目>**: <現状の問題> → <改善案（コード例あり）>
 
-### ❌ 問題点（要修正）
+## ❌ 問題点（要修正）
 - **<項目>**: <問題の内容と、修正後のコード例>
 
-### 修正後の frontmatter サンプル（変更がある場合のみ）
+## 修正後の frontmatter サンプル（変更がある場合のみ）
 \`\`\`yaml
 ---
 <修正後の frontmatter を記載>
 ---
 \`\`\`
-
----
 ```
 
-ファイルが存在する場合は最初に Read してから、適切な方法（新規 Write または Edit）で更新する。
+ファイルが存在する場合は最初に Read してから Write で上書きする。
 
 ## レビュー後のアクション
 
-`.claude/SKILLS_REVIEW.md` への書き込みが完了したら、会話上にも同じ内容を出力する。
+`REVIEW.md` への書き込みが完了したら、会話上にも同じ内容を出力する。
 
 その後、以下を確認する:
 
