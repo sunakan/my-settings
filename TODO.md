@@ -5,17 +5,6 @@
 
 
 
-### スキル: `review-skills`
-
-> REVIEW: `claudecode/skills/review-skills/REVIEW.md`
-
-⚠️ 改善提案 3件（❌ 問題点なし）:
-- 一括レビューモードのプロンプトテンプレートで `subagent_type: general-purpose` が未明示
-- 単体モードのパス探索で `~/` 表記がシェル展開されない環境がある（絶対パスへの変更を検討）
-- `context: fork` を付けているが `agent` フィールドが未明示（デフォルト `general-purpose` で正しいが、明示するとより意図が明確）
-
----
-
 ## やらない
 
 ### `keybindings.json` の git 管理

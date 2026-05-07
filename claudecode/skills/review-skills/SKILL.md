@@ -5,6 +5,7 @@ when_to_use: "スキルを新規作成したあと、既存スキルを改善し
 argument-hint: "[skill-name または SKILL.md のパス]（省略時は .claude/skills/ を一括レビュー）"
 allowed-tools: Read Bash(find *) Bash(ls *) Bash(wc *) Write Edit Agent
 context: fork
+agent: general-purpose
 disable-model-invocation: true
 ---
 
@@ -31,7 +32,7 @@ disable-model-invocation: true
 
 ### Step 2: 並列レビュー
 
-スキルごとに Agent ツール（`subagent_type: general-purpose`）を **1 つのメッセージ内に全て並べて**起動する。
+スキルごとに Agent ツール（`subagent_type: general-purpose`、書き込みを含むため `Explore` は不可）を **1 つのメッセージ内に全て並べて**起動する。
 
 各サブ Agent へのプロンプトテンプレート（`<name>` を実際のスキル名、`<path>` を SKILL.md の実パスに置換する）:
 
