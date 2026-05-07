@@ -79,8 +79,7 @@
       "Bash(git branch -D *)",
       "Bash(git clean *)",
       "Bash(git rm *)",
-      "Bash(git stash drop *)",
-      "Bash(git stash clear *)",
+      "Bash(git stash *)",
       "_description: ghの参照以外を禁止(PRへコメントやissue作成・コメントは許可)",
       "Bash(gh pr create *)",
       "Bash(gh pr merge *)",
@@ -112,6 +111,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/block-sensitive-files.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/block-git-staging.sh"
           }
         ]
       }
