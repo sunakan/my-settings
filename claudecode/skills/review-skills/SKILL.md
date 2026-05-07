@@ -83,12 +83,10 @@ disable-model-invocation: true
 以下の順で SKILL.md の場所を特定する:
 
 1. `$ARGUMENTS` が `/` を含むパス → そのパスを直接 Read
-2. `$ARGUMENTS` が名前のみ → 以下の順に探す:
-   - `.claude/skills/$ARGUMENTS/SKILL.md`（プロジェクトスコープ）
-   - `~/.claude/skills/$ARGUMENTS/SKILL.md`（個人スコープ）
+2. `$ARGUMENTS` が名前のみ → `.claude/skills/$ARGUMENTS/SKILL.md` を探す
 
 場所が特定できない場合:
-- `.claude/skills/` と `~/.claude/skills/` 配下のスキル一覧を `ls` で表示する
+- `.claude/skills/` 配下のスキル一覧を `ls` で表示する
 - 「レビューするスキル名を指定してください」とユーザーに確認を求めて終了する
 
 場所が特定できたら、**SKILL.md を Read ツールで読み込む**。
