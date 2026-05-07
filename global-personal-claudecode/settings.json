@@ -54,6 +54,10 @@
       "Read(.git/**)", "Edit(.git/**)", "Write(.git/**)",
       "Read(**/.git/**)", "Edit(**/.git/**)", "Write(**/.git/**)",
 
+      "_description: Claude Code自身の認証情報・会話ログを保護",
+      "Read(~/.claude.json)", "Edit(~/.claude.json)", "Write(~/.claude.json)",
+      "Read(~/.claude/history.jsonl)", "Edit(~/.claude/history.jsonl)", "Write(~/.claude/history.jsonl)",
+
       "_description: 個別",
       "Write(.terraformrc)",
       "Write(.aws_config)",
