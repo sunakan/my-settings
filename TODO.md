@@ -5,15 +5,6 @@
 
 
 
-### スキル: `review-claude-rules`
-
-> REVIEW: `claudecode/skills/review-claude-rules/REVIEW.md`
-
-⚠️ 改善提案 1件（❌ 問題点なし）:
-- `when_to_use` 欠如（追加例: `.claude/rules/*.md を新規作成・編集したとき、rules ファイルの品質を一括確認したいとき`）
-
----
-
 ### スキル: `review-skills`
 
 > REVIEW: `claudecode/skills/review-skills/REVIEW.md`

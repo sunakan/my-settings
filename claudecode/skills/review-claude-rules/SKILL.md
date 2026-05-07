@@ -5,6 +5,7 @@ disable-model-invocation: true
 allowed-tools: Read Write Edit Bash(find *) Bash(ls *) Bash(date *)
 argument-hint: "[rule-filename]"
 context: fork
+when_to_use: ".claude/rules/*.md を新規作成・編集したとき、rules ファイルの品質を一括確認したいとき"
 ---
 
 ## 目的
