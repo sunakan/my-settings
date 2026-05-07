@@ -2,16 +2,6 @@
 
 ## 検討中
 
-### スキル: `review-claude-rules`
-
-> REVIEW: `claudecode/skills/review-claude-rules/REVIEW.md`
-
-⚠️ 改善提案 2件（❌ 問題点なし）:
-- **`$ARGUMENTS` 直接展開の shell injection リスク**: `ls .claude/rules/$ARGUMENTS 2>/dev/null` でクォートなしで展開しているため、シェルメタ文字を含む引数で予期しない動作になる可能性がある。`ls ".claude/rules/$ARGUMENTS" 2>/dev/null` のようにダブルクォートで囲むと安全性が増す。
-- **`agent` フィールドのコメント補足**: `context: fork` を付けているが書き込みありのため `general-purpose`（デフォルト）が正しい。デフォルトでよい旨をコメントで残すと意図が伝わる。
-
----
-
 ### スキル: `review-claude-skills`
 
 > REVIEW: `claudecode/skills/review-claude-skills/REVIEW.md`

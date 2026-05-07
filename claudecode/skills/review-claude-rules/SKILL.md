@@ -6,6 +6,7 @@ disable-model-invocation: true
 allowed-tools: Read Write Edit Bash(find *) Bash(ls *) Bash(date *)
 argument-hint: "[rule-filename]"
 context: fork
+# agent は省略 — 書き込みありのため general-purpose がデフォルト = 正しい
 ---
 
 ## 目的
@@ -27,7 +28,7 @@ context: fork
 
 ```!
 [ -n "$ARGUMENTS" ] \
-  && ls .claude/rules/$ARGUMENTS 2>/dev/null \
+  && ls ".claude/rules/$ARGUMENTS" 2>/dev/null \
   || ls .claude/rules/*.md
 ```
 
