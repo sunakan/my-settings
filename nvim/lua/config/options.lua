@@ -13,3 +13,6 @@ vim.opt.relativenumber = false
 vim.cmd([[
   highlight LineNr guifg=#9966cc guibg=NONE
 ]])
+
+-- 自動フォーマットをやめる(ISUCONや.claude/settings.jsonで勝手にフォーマットされたくない)
+vim.g.autoformat = false
