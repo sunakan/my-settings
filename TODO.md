@@ -2,18 +2,6 @@
 
 ## 検討中
 
-### スキル: `review-skills`
-
-> REVIEW: `claudecode/skills/review-skills/REVIEW.md`
-
-⚠️ 改善提案 4件（❌ 問題点なし）:
-- **`allowed-tools` の `Agent` の有効性**: Claude Code の正式なツール名は `Task`（サブエージェント起動）であり、`Agent` 文字列が pre-approve として効くかは環境依存の可能性がある。サブエージェント起動時に許可プロンプトが繰り返し出るようなら `Task` に置き換えが必要（要動作確認）。
-- **`(Bash completed with no output)` 表記の混入**: チェック表内に `(Bash completed with no output)` という特殊表記が混入しており、本文を読む Claude を混乱させる可能性がある。`` !`command` `` 表記に統一する。
-- **単体モードの探索パス前提の明示**: `.claude/skills/` がカレント基準かホーム基準かが文脈依存。プロジェクト直下なら `.claude/skills/`、グローバルなら `~/.claude/skills/` を見るという挙動の前提を明示、または両方を順に試す設計にすると取りこぼしが減る。
-- **行数増加時の将来分割案**: 現状 189 行で問題ないが、チェック観点の表が長いため長期的に `review-checklist.md` など supporting file への抽出を検討。
-
----
-
 ### スキル: `update-claude-settings`
 
 > REVIEW: `claudecode/skills/update-claude-settings/REVIEW.md`

@@ -7,6 +7,7 @@ allowed-tools: Read Bash(find *) Bash(ls *) Bash(wc *) Write Edit Agent
 argument-hint: "[skill-name または SKILL.md のパス]（省略時は .claude/skills/ を一括レビュー）"
 context: fork
 agent: general-purpose
+# allowed-tools の Agent は環境によっては Task に要変更（動作確認推奨）
 ---
 
 ## 制約
@@ -119,6 +120,8 @@ agent: general-purpose
 ---
 
 ## 単体レビューモード（引数あり）
+
+対象は **CWD の `.claude/skills/`**（一括モードと同じ）。
 
 以下の順で SKILL.md の場所を特定する:
 
