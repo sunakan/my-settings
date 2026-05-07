@@ -4,6 +4,8 @@ description: "Claude Code スキル（SKILL.md）をベストプラクティス�
 when_to_use: "スキルを新規作成したあと、既存スキルを改善したいとき、SKILL.md の内容が正しいか確認したいときに使う。引数なしで .claude/skills/ 全体を一括レビューできる。"
 argument-hint: "[skill-name または SKILL.md のパス]（省略時は .claude/skills/ を一括レビュー）"
 allowed-tools: Read Bash(find *) Bash(ls *) Bash(wc *) Write Edit Agent
+context: fork
+disable-model-invocation: true
 ---
 
 ## 制約
@@ -29,7 +31,7 @@ allowed-tools: Read Bash(find *) Bash(ls *) Bash(wc *) Write Edit Agent
 
 ### Step 2: 並列レビュー
 
-スキルごとに `general-purpose` サブ Agent を **1 つのメッセージ内に全て並べて**起動する。
+スキルごとに Agent ツール（`subagent_type: general-purpose`）を **1 つのメッセージ内に全て並べて**起動する。
 
 各サブ Agent へのプロンプトテンプレート（`<name>` を実際のスキル名、`<path>` を SKILL.md の実パスに置換する）:
 
