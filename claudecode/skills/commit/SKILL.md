@@ -4,6 +4,7 @@ description: `/commit` で呼ばれた時にステージング済みの変更を
 disable-model-invocation: true
 allowed-tools: Bash(git diff *) Bash(git log *) Bash(git commit *)
 when_to_use: "ステージング済みの変更をコミットするとき（git add はユーザーが済ませた前提）"
+# context: fork は付けない — 評価結果をユーザーに会話で提示することが主目的のため（ファイル出力がメインになったら検討）
 ---
 
 ## 目的
