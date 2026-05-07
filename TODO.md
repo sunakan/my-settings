@@ -3,15 +3,6 @@
 ## 検討中
 
 
-### スキル: `review-git-diff-size`
-
-> REVIEW: `claudecode/skills/review-git-diff-size/REVIEW.md`
-
-⚠️ 改善提案 2件（❌ 問題点なし）:
-- `when_to_use` 欠如
-- `context: fork` 検討（評価結果をユーザーに見せるのが主目的のため意図的な可能性あり）
-
----
 
 ### スキル: `update-claude-settings`
 

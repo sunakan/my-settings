@@ -4,6 +4,7 @@ description: /update-claude-settings で呼ばれた時、Web検索でClaude Cod
 disable-model-invocation: true
 allowed-tools: WebSearch WebFetch Read Bash(ls ~/.claude/*) Edit Agent
 context: fork
+when_to_use: "Claude Code の設定を見直したいとき、新しいベストプラクティスを調査したいとき、my-settings リポジトリで設定改善候補をリストアップしたいとき"
 ---
 
 ## 前提チェック
