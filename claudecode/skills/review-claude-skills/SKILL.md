@@ -4,6 +4,8 @@ description: 既存の SKILL.md（`.claude/skills/<name>/SKILL.md`）を 8 観�
 disable-model-invocation: true
 allowed-tools: Read Write Edit Bash(ls *) WebSearch WebFetch
 argument-hint: "[skill-name]"
+context: fork
+when_to_use: "新規 SKILL.md を作成したとき、既存スキルを改善したとき、スキルの品質を確認したいとき"
 ---
 
 ## 目的
