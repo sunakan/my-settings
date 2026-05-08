@@ -1,14 +1,9 @@
 ---
-paths:
-  - "CLAUDE.md"
-  - "AGENTS.md"
-  - ".claude/rules/**/*.md"
-  - ".claude/skills/**/SKILL.md"
+globs: CLAUDE.md, AGENTS.md, .claude/rules/**/*.md, .claude/skills/**/SKILL.md
+description: Editing conventions for CLAUDE.md, .claude/rules/, and .claude/skills/ files
 ---
 
 # CLAUDE.md / .claude/rules/ / .claude/skills/ 編集の運用ルール
-
-このルールは `CLAUDE.md` / `.claude/rules/` 配下の rule ファイル / `.claude/skills/**/SKILL.md` を編集する時に自動 load される。
 
 ## 鉄則
 

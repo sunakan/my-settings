@@ -1,11 +1,9 @@
 ---
-paths:
-  - ".claude/skills/**/SKILL.md"
+globs: .claude/skills/**/SKILL.md
+description: Rules for designing and editing SKILL.md files when creating or modifying skills
 ---
 
 # SKILL.md 設計ルール
-
-このルールは `.claude/skills/**/SKILL.md` を編集する時に自動 load される。
 
 ## description のルール（最重要）
 
