@@ -1,0 +1,2 @@
+# デフォルトがAlt+Spaceで、Raycastに使っているためコマンド+SPACEにする
+search_shortcut: META+SPACE
