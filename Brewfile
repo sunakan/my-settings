@@ -400,3 +400,15 @@ cask "switchhosts"
 # - 内部的には llama.cpp の推論処理をシンプルな CLI と REST API の裏側に隠蔽
 # - モデルの量子化・GPU メモリ割り当て・モデルファイル管理の複雑さを抽象化してる
 brew "ollama"
+
+#
+# Espanso
+#
+# URL
+# - https://espanso.org/
+# GitHub
+# - https://github.com/espanso/espanso
+#
+# 概要
+# - YAMLで管理できるスニペットアプリ
+cask "espanso"
