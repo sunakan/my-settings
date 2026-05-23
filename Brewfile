@@ -385,3 +385,18 @@ cask "1password-cli"
 # 概要
 # - /etc/hosts を GUI で管理・切り替えするツール
 cask "switchhosts"
+
+#
+# ollama
+#
+# URL
+# - https://ollama.com/
+# GitHub
+# - https://github.com/ollama/ollama
+#
+# 概要
+# - Ollama はコンシューマーハードウェア上で最小限のセットアップで LLM を動かすためのローカル LLM ランタイム
+# - モデルマネージャーと推論サーバーの2つの役割を兼ねる
+# - 内部的には llama.cpp の推論処理をシンプルな CLI と REST API の裏側に隠蔽
+# - モデルの量子化・GPU メモリ割り当て・モデルファイル管理の複雑さを抽象化してる
+brew "ollama"
