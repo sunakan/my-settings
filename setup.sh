@@ -27,6 +27,9 @@ LINKS=(
   "$(pwd)/git/ignore:$HOME/.config/git/ignore"
   "$(pwd)/tmux/tmux.conf:$HOME/.config/tmux/tmux.conf"
   "$(pwd)/nvim/lua/config/options.lua:$HOME/.config/nvim/lua/config/options.lua"
+  "$(pwd)/opencode/opencode.jsonc:$HOME/.config/opencode/opencode.jsonc"
+  "$(pwd)/espanso:$HOME/Library/Application Support/espanso"
+  # ClaudeCode
   "$(pwd)/claudecode/hooks:$HOME/.claude/hooks"
   "$(pwd)/claudecode/rules:$HOME/.claude/rules"
   "$(pwd)/claudecode/settings.json:$HOME/.claude/settings.json"
