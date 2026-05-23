@@ -27,7 +27,7 @@ python = ['3.14.3']
 #
 # mise upで、最新のやつインストールしなおし
 aws-vault = 'latest'
-tmux = '3.5a'
+tmux = '3.6b'
 jq = 'latest'
 alp = 'latest'
 ripgrep = 'latest'
