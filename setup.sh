@@ -4,11 +4,18 @@ safe_link() {
   local src="$1"
   local dst="$2"
 
-  if [ -L "$dst" ] || [ -e "$dst" ]; then
-    [ ! -L "$dst" ] && echo "WARNING: $dst is a regular file, skipping"
-    return
+  if [ -L "$dst" ]; then
+    return  # すでにシンボリックリンク、スキップ
   fi
 
+  if [ -e "$dst" ]; then
+    if [ -d "$dst" ]; then
+      echo "WARNING: $dst is a directory, skipping"
+    else
+      echo "WARNING: $dst is a regular file, skipping"
+    fi
+    return
+  fi
   mkdir -p "$(dirname "$dst")"
   ln -s "$src" "$dst"
 }
