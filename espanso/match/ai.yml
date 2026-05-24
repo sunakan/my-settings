@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - trigger: ";web"
+    replace: "細かくWeb検索して精査して。事実と仮説・推測は分けて回答して"
