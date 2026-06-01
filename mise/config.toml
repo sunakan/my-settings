@@ -13,7 +13,7 @@
 # mise ls-remote go
 go = ['1.26.3']
 "go:golang.org/x/tools/gopls" = "latest"
-ruby = ['4.0.1']
+ruby = ['3.4.9', '4.0.5']
 nodejs = ['24.13.1']
 "npm:@google/gemini-cli" = "latest"
 java = ['temurin-21.0.10+7.0.LTS', 'temurin-25.0.2+10.0.LTS']
