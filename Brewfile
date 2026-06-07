@@ -414,19 +414,6 @@ brew "ollama"
 cask "espanso"
 
 #
-# op-vault
-#
-# URL
-# - https://github.com/sunakan/homebrew-op-vault/blob/main/op-vault.rb
-# GitHub
-# - https://github.com/sunakan/op-vault
-#
-# 概要
-# - 1Passwordのクレデンシャルをキャッシュ
-tap "sunakan/op-vault"
-brew "sunakan/op-vault/op-vault"
-
-#
 # poppler
 #
 # URL
