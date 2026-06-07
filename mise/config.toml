@@ -62,6 +62,12 @@ version = "0.1.13"
 platforms.macos-arm64.url = "https://github.com/Warashi/cage/releases/download/v{{version}}/cage_Darwin_arm64.tar.gz"
 platforms.macos-arm64.checksum = "sha256:29ccee40b34bb4013700e03b21882914f2625e81749dcd0dc3deec408cbac477"
 
+# op-vault: 1PassowrdのCLI(op)のキャッシュツール
+[tools."http:op-vault"]
+version = "0.2.0"
+platforms.macos-arm64.url = "https://github.com/sunakan/op-vault/releases/download/v{{version}}/op-vault_darwin_arm64.tar.gz"
+platforms.macos-arm64.checksum = "sha256:a8f2d35eeb27175a61c91f8909b5d99d37bbbae15f9d82fe1a228d37b4b744d1"
+
 [settings]
 # idiomatic version fileを有効化するかどうか
 # asdfやmiseなどのバージョン管理ツールに依存しない「言語毎に標準的なバージョンファイル」

@@ -424,3 +424,13 @@ cask "espanso"
 # - PDF → テキスト
 # - AIが使う
 brew "poppler"
+
+#
+# cppcheck
+#
+# GitHub
+# - https://github.com/cppcheck-opensource/cppcheck
+#
+# 概要
+# - Cのlinter
+brew "cppcheck"
