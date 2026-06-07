@@ -425,3 +425,15 @@ cask "espanso"
 # - 1Passwordのクレデンシャルをキャッシュ
 tap "sunakan/op-vault"
 brew "sunakan/op-vault/op-vault"
+
+#
+# poppler
+#
+# URL
+# - https://formulae.brew.sh/formula/poppler
+# - https://poppler.freedesktop.org/
+#
+# 概要
+# - PDF → テキスト
+# - AIが使う
+brew "poppler"
