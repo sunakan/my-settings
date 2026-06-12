@@ -434,3 +434,13 @@ brew "poppler"
 # 概要
 # - Cのlinter
 brew "cppcheck"
+
+#
+# llvm
+#
+# GitHub
+# - https://github.com/llvm/llvm-project/blob/main/.clang-tidy
+#
+# 概要
+# - Cのlinter(clang-tidyのため)
+brew "llvm"
