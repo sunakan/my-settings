@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  - trigger: ";lock"
+    replace: "select OBJECT_NAME, INDEX_NAME, LOCK_TYPE, case LOCK_MODE when 'X'  then 'X: ネクストキーロック' when 'X,REC_NOT_GAP' then 'X,REC_NOT_GAP: レコードのみロック' when 'X,GAP' then 'X,GAP: GAPのみロック' when 'IX' then 'IX: テーブルロック' else LOCK_MODE end as \"LOCK_MODE\" , LOCK_DATA from performance_schema.data_locks limit 100;"
