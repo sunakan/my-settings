@@ -29,6 +29,7 @@ LINKS=(
   "$(pwd)/nvim/lua/config/options.lua:$HOME/.config/nvim/lua/config/options.lua"
   "$(pwd)/opencode/opencode.jsonc:$HOME/.config/opencode/opencode.jsonc"
   "$(pwd)/espanso:$HOME/Library/Application Support/espanso"
+  "$(pwd)/ghostty/config:$HOME/.config/ghostty/config"
   # ClaudeCode
   "$(pwd)/claudecode/hooks:$HOME/.claude/hooks"
   "$(pwd)/claudecode/rules:$HOME/.claude/rules"
