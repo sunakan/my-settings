@@ -1,0 +1,25 @@
+font-family = HackGen Console NF
+font-size = 18
+
+theme = Citruszest
+
+# Custom colors
+background = #1e1e2e
+foreground = #cdd6f4
+cursor-color = #f5e0dc
+cursor-text = #1e1e2e
+selection-background = #585b70
+selection-foreground = #cdd6f4
+
+# Opacity for unfocused splits (0.0 to 1.0)
+unfocused-split-opacity = 0.9
+
+# opacity
+background-opacity = 0.95
+background-blur = true
+
+# Number of lines to keep in scrollback buffer
+scrollback-limit = 10000
+
+# Default directory for new terminals
+working-directory = ~/works/github.com/sunakan/
