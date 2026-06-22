@@ -53,6 +53,7 @@ cloudflared = '2026.3.0'
 golangci-lint = 'latest'
 opam = 'latest'
 "aqua:go-task/task" = "latest"
+"aqua:sqldef/sqldef/mysqldef" = "latest"
 
 # profilecli: PyroscopeにpprofプロファイルのやりとりをするためのCLIツール
 [tools."http:profilecli"]
