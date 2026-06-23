@@ -36,6 +36,7 @@ LINKS=(
   "$(pwd)/claudecode/settings.json:$HOME/.claude/settings.json"
   "$(pwd)/claudecode/skills:$HOME/.claude/skills"
   "$(pwd)/claudecode/CLAUDE.md:$HOME/.claude/CLAUDE.md"
+  "$(pwd)/claudecode/statusline.sh:$HOME/.claude/statusline.sh"
 )
 
 for entry in "${LINKS[@]}"; do
