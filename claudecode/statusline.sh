@@ -126,5 +126,5 @@ remaining() {
 printf '%s\n%s\n%s\n' \
   "📂 ${short_cwd}${branch:+ │ 🌿 $branch}" \
   "context: $(pct "$used_pct")${model:+ │ $model${effort:+ ($effort)}}" \
-  "5h制限: $(pct "$fh_pct") $(remaining_hm "$fh_resets") │ 7d制限: $(pct "$sd_pct") $(remaining_date "$sd_resets")"
+  "5h: $(pct "$fh_pct") $(remaining_hm "$fh_resets") │ 7d: $(pct "$sd_pct") $(remaining_date "$sd_resets")"
 
