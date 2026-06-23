@@ -15,7 +15,7 @@ selection-foreground = #cdd6f4
 unfocused-split-opacity = 0.9
 
 # opacity
-background-opacity = 0.95
+background-opacity = 0.9
 background-blur = true
 
 # Number of lines to keep in scrollback buffer
