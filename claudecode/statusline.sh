@@ -122,7 +122,7 @@ remaining() {
   [ "$h" -gt 0 ] && printf '(%dh%02dm)' "$h" "$m" || printf '(%dm)' "$m"
 }
 
-# ── 出力 ─────────────────────────────────────────────────────────
+# 出力
 printf '%s\n%s\n%s\n' \
   "📂 ${short_cwd}${branch:+ │ 🌿 $branch}" \
   "context: $(pct "$used_pct")${model:+ │ $model${effort:+ ($effort)}}" \
