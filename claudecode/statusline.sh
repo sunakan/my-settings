@@ -29,6 +29,11 @@ fi
 CACHE="$HOME/.cache/claude-usage.json"
 CACHE_TTL=60  # 秒
 
+# キャッシュが古いか新鮮か調べる
+#
+# キャッシュ無し: 0
+# ある(古い): 0
+# ある(新鮮): 非0
 cache_stale() {
   [ ! -f "$CACHE" ] && return 0
   local age=$(( $(date +%s) - $(stat -f %m "$CACHE" 2>/dev/null || stat -c %Y "$CACHE") ))
@@ -47,13 +52,15 @@ if cache_stale; then
       "https://api.anthropic.com/api/oauth/usage" \
       -H "Authorization: Bearer $TOK" \
       -H "anthropic-beta: oauth-2025-04-20" \
-      -H "User-Agent: claude-code/$(claude --version 2>/dev/null | awk '{print $NF}')" \
+      -H "User-Agent: claude-code/$(command claude --version 2>/dev/null | awk '{print $NF}')" \
     )
     [ -n "$RESP" ] && { mkdir -p "$(dirname "$CACHE")"; echo "$RESP" > "$CACHE"; }
+  else
+    echo 'Failed get token'
   fi
 fi
 
-fh_pct="" fh_resets="" sd_pct="" sd_resets=""
+fh_pct="" fh_resets="" sd_pct="" sd_resets="" cache_time=""
 if [ -f "$CACHE" ]; then
   IFS=$'\t' read -r fh_pct fh_resets sd_pct sd_resets < <(
     jq -r '[
@@ -63,6 +70,10 @@ if [ -f "$CACHE" ]; then
       (.seven_day.resets_at // "")
     ] | @tsv' "$CACHE" 2>/dev/null
   )
+  cache_epoch=$(stat -f %m "$CACHE" 2>/dev/null)
+  [ -n "$cache_epoch" ] && cache_time=$(date -r "$cache_epoch" '+%Y/%m/%dT%H:%M:%S%z')
+else
+  echo "not found: $CACHE"
 fi
 
 # ヘルパー関数
@@ -126,5 +137,4 @@ remaining() {
 printf '%s\n%s\n%s\n' \
   "📂 ${short_cwd}${branch:+ │ 🌿 $branch}" \
   "context: $(pct "$used_pct")${model:+ │ $model${effort:+ ($effort)}}" \
-  "5h: $(pct "$fh_pct") $(remaining_hm "$fh_resets") │ 7d: $(pct "$sd_pct") $(remaining_date "$sd_resets")"
-
+  "5h: $(pct "$fh_pct") $(remaining_hm "$fh_resets") │ 7d: $(pct "$sd_pct") $(remaining_date "$sd_resets")${cache_time:+ │ $cache_time}"
