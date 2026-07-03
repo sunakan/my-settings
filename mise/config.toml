@@ -40,6 +40,7 @@ elixir = ['1.19.5-otp-27']
 # awscli = ['2.21.2', '2.21.3']
 "aqua:suzuki-shunsuke/disable-checkout-persist-credentials" = "1.0.0"
 "aqua:suzuki-shunsuke/ghtkn" = 'latest'
+"aqua:suzuki-shunsuke/pinact" = 'latest'
 "aqua:tmux" = '3.6b'
 "aqua:jqlang/jq" = 'latest'
 "aqua:tkuchiki/alp" = 'latest'
@@ -57,18 +58,24 @@ elixir = ['1.19.5-otp-27']
 "aqua:kubernetes/kubernetes/kubectl" = 'latest'
 "aqua:cloudflare/cloudflared" = 'latest'
 "aqua:golangci/golangci-lint" = 'latest'
-"aqua:go-task/task" = "latest"
-"aqua:sqldef/sqldef/mysqldef" = "latest"
+"aqua:go-task/task" = 'latest'
+"aqua:sqldef/sqldef/mysqldef" = 'latest'
+"aqua:neovim/neovim" = 'latest'
+# btmコマンドでtopみたいなやつ
+"aqua:ClementTsang/bottom" = 'latest'
+"aqua:junegunn/fzf" = 'latest'
+# minisignはファイル検証に利用
+"aqua:jedisct1/minisign" = 'latest'
 
 "asdf:mise-plugins/mise-eza" = 'latest'
 "github:ByteNess/aws-vault" = 'latest'
 "github:ocaml/opam" = 'latest'
 "github:sunakan/op-vault" = "0.3.0"
 
-"go:golang.org/x/tools/gopls" = "latest"
+"go:golang.org/x/tools/gopls" = 'latest'
 
-"npm:@google/gemini-cli" = "latest"
-"npm:@openai/codex" = "latest"
+"npm:@google/gemini-cli" = 'latest'
+"npm:@openai/codex" = 'latest'
 
 # profilecli: PyroscopeにpprofプロファイルのやりとりをするためのCLIツール
 [tools."http:profilecli"]
@@ -77,7 +84,7 @@ platforms.macos-arm64.url = "https://github.com/grafana/pyroscope/releases/downl
 platforms.macos-arm64.checksum = "sha256:2cee2f7a6b695ac6545ed4b284505290485778c43cf720ad468e42e10e2ce2c9"
 
 # cage: ClaudeCodeをぶん回すために必要
-#"go:github.com/Warashi/cage" = "latest"
+#"go:github.com/Warashi/cage" = 'latest'
 [tools."http:cage"]
 version = "0.1.13"
 platforms.macos-arm64.url = "https://github.com/Warashi/cage/releases/download/v{{version}}/cage_Darwin_arm64.tar.gz"

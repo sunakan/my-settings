@@ -39,17 +39,6 @@ cask "vagrant"
 brew "git"
 
 #
-# neovim
-#
-# URL
-# - https://formulae.brew.sh/formula/neovim#default
-#
-# 概要
-# - エディタ
-#
-brew "neovim"
-
-#
 # mise
 #
 # URL
@@ -137,19 +126,6 @@ brew "mysql-client@8.4"
 brew "zstd"
 
 #
-# gdu
-#
-# URL
-# - https://formulae.brew.sh/formula/gdu
-#
-# 概要
-# - go DiskUsage()
-#   - Goで記述された高速なディスク使用量分析ツール
-# - https://github.com/dundee/gdu
-# - AstroNvimのために導入
-brew "gdu"
-
-#
 # zsh-completions
 #
 # URL
@@ -183,42 +159,6 @@ brew "zsh-completions"
 # - slowqueryの分析ツールであるpt-query-digestが入っている
 # - isuconで利用
 brew "percona-toolkit"
-
-#
-# duckdb
-#
-# URL
-# - https://formulae.brew.sh/formula/duckdb
-#
-# 概要
-# - SQLite3の列指向版
-# - 分析特化
-# - ファイルベースで管理可能なdb
-# - ファイルサイズも小さい
-brew "duckdb"
-
-#
-# bottom
-#
-# URL
-# - https://github.com/ClementTsang/bottom
-#
-# 概要
-# - topコマンドの代替
-#
-brew "bottom"
-
-#
-# pinact
-#
-# URL
-# - https://formulae.brew.sh/formula/pinact
-#
-# 概要
-# - github actionsのバージョンをpin
-#
-brew "pinact"
-
 #
 # gnupg
 #
@@ -254,17 +194,6 @@ brew "pinentry-mac"
 brew "fzf"
 
 #
-# fd
-#
-# URL
-# - https://formulae.brew.sh/formula/fd
-#
-# 概要
-# - シンプルで高速かつユーザーフレンドリーなfind file代替手段
-#
-brew "fd"
-
-#
 # graphviz
 #
 # 概要
@@ -279,13 +208,6 @@ brew "graphviz"
 # - HTML → Markdown変換
 #
 brew "pandoc"
-
-#
-# minisig
-#
-# 概要
-# - ファイル検証に利用
-brew "minisign"
 
 #
 # otel-cli
@@ -388,18 +310,6 @@ brew "ollama"
 # 概要
 # - YAMLで管理できるスニペットアプリ
 cask "espanso"
-
-#
-# poppler
-#
-# URL
-# - https://formulae.brew.sh/formula/poppler
-# - https://poppler.freedesktop.org/
-#
-# 概要
-# - PDF → テキスト
-# - AIが使う
-brew "poppler"
 
 #
 # cppcheck
