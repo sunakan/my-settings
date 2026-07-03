@@ -22,6 +22,7 @@ safe_link() {
 
 LINKS=(
   "$(pwd)/mise/config.toml:$HOME/.config/mise/config.toml"
+  "$(pwd)/mise/mise.lock:$HOME/.config/mise/mise.lock"
   "$(pwd)/wezterm/wezterm.lua:$HOME/.config/wezterm/wezterm.lua"
   "$(pwd)/lazygit/config.yml:$HOME/.config/lazygit/config.yml"
   "$(pwd)/git/ignore:$HOME/.config/git/ignore"
