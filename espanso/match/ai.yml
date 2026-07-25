@@ -5,3 +5,5 @@ matches:
     replace: "細かくWeb検索して精査して。事実と仮説・推測は分けて回答して"
   - trigger: ";pr"
     replace: "gh prでPR作成するコマンドを作って。アサインは自分、bodyは/tmp/において、ドラフトPRで"
+  - trigger: ";next"
+    replace: "コミットしました。\nTODO, COMPLETED, CONCEPTを整理して\n次は何をするべき？"
