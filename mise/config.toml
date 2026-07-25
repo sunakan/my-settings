@@ -66,11 +66,22 @@ elixir = ['1.19.5-otp-27']
 "aqua:junegunn/fzf" = 'latest'
 # minisignはファイル検証に利用
 "aqua:jedisct1/minisign" = 'latest'
+# OrbStack同梱のdocker-credential-osxkeychainに"already exists in the keychain"の既知バグがある
+# docker loginを繰り返すと再現するため、ECR専用のこのヘルパーで代替して回避
+# https://github.com/orbstack/orbstack/issues/2457
+#
+# 導入後は ~/.docker/config.json に credHelpers を追加する(mise installだけでは反映されない)
+# {
+#   "credHelpers": {
+#     "<account_id>.dkr.ecr.<region>.amazonaws.com": "ecr-login"
+#   }
+# }
+"aqua:awslabs/amazon-ecr-credential-helper" = 'latest'
 
 "asdf:mise-plugins/mise-eza" = 'latest'
 "github:ByteNess/aws-vault" = 'latest'
 "github:ocaml/opam" = 'latest'
-"github:sunakan/op-vault" = "0.3.0"
+"github:sunakan/op-vault" = "0.4.0"
 
 "go:golang.org/x/tools/gopls" = 'latest'
 
