@@ -221,7 +221,8 @@ brew "otel-cli"
 #
 # 概要
 # - Claude Code
-cask "claude-code"
+#cask "claude-code"
+cask "claude-code@latest"
 
 #
 # entr
