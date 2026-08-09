@@ -1,0 +1,31 @@
+onboarding = false
+[keys]
+# tmuxと同じ prefix
+prefix = "ctrl+j"
+
+# 設定リロード
+reload_config = "prefix+r"
+
+# resize modeはrと衝突するのでShift+rへ
+resize_mode = "prefix+shift+r"
+
+# pane分割
+split_vertical = "prefix+|"
+split_horizontal = "prefix+minus"
+
+# pane移動
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+# tmuxのwindow ≒ Herdrのtab
+previous_tab = "prefix+ctrl+h"
+next_tab = "prefix+ctrl+l"
+
+[theme]
+name = "one-dark"
+auto_switch = false
+
+[ui.sound]
+enabled = false

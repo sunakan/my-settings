@@ -31,6 +31,8 @@ LINKS=(
   "$(pwd)/opencode/opencode.jsonc:$HOME/.config/opencode/opencode.jsonc"
   "$(pwd)/espanso:$HOME/Library/Application Support/espanso"
   "$(pwd)/ghostty/config:$HOME/.config/ghostty/config"
+  "$(pwd)/herdr/config.toml:$HOME/.config/herdr/config.toml"
+
   # ClaudeCode
   "$(pwd)/claudecode/hooks:$HOME/.claude/hooks"
   "$(pwd)/claudecode/rules:$HOME/.claude/rules"
