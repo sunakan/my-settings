@@ -32,6 +32,7 @@ LINKS=(
   "$(pwd)/espanso:$HOME/Library/Application Support/espanso"
   "$(pwd)/ghostty/config:$HOME/.config/ghostty/config"
   "$(pwd)/herdr/config.toml:$HOME/.config/herdr/config.toml"
+  "$(pwd)/codex/skills:$HOME/.agents/skills"
 
   # ClaudeCode
   "$(pwd)/claudecode/hooks:$HOME/.claude/hooks"
