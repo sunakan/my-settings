@@ -62,6 +62,7 @@ elixir = ['1.19.5-otp-27']
 "aqua:sqldef/sqldef/mysqldef" = 'latest'
 "aqua:neovim/neovim" = 'latest'
 "aqua:ogulcancelik/herdr" = 'latest'
+"aqua:gitleaks/gitleaks" = 'latest'
 # btmコマンドでtopみたいなやつ
 "aqua:ClementTsang/bottom" = 'latest'
 "aqua:junegunn/fzf" = 'latest'
@@ -83,7 +84,6 @@ elixir = ['1.19.5-otp-27']
 "github:ByteNess/aws-vault" = 'latest'
 "github:ocaml/opam" = 'latest'
 "github:sunakan/op-vault" = "0.4.0"
-"github:tomasz-tomczyk/crit" = { version = "0.18.1", bin = "crit" }
 
 "go:golang.org/x/tools/gopls" = 'latest'
 
